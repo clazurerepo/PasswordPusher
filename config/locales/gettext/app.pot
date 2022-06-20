@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pwpush 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2022-05-24 17:59+0200\n"
-"PO-Revision-Date: 2022-05-24 17:59+0200\n"
+"POT-Creation-Date: 2022-06-05 11:04+0200\n"
+"PO-Revision-Date: 2022-06-05 11:04+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -36,20 +36,20 @@ msgstr ""
 msgid "Could not send feedback.  Try again?"
 msgstr ""
 
-#: ../../../app/controllers/passwords_controller.rb:134
+#: ../../../app/controllers/passwords_controller.rb:142
 msgid "That push doesn't belong to you."
 msgstr ""
 
-#: ../../../app/controllers/passwords_controller.rb:148
+#: ../../../app/controllers/passwords_controller.rb:156
 msgid "That push does not belong to you."
 msgstr ""
 
-#: ../../../app/controllers/passwords_controller.rb:153
+#: ../../../app/controllers/passwords_controller.rb:161
 msgid "That push is not deletable by viewers."
 msgstr ""
 
-#: ../../../app/controllers/passwords_controller.rb:169
-#: ../../../app/controllers/passwords_controller.rb:172
+#: ../../../app/controllers/passwords_controller.rb:177
+#: ../../../app/controllers/passwords_controller.rb:180
 msgid "The password has been deleted and secret URL expired."
 msgstr ""
 
@@ -1342,32 +1342,36 @@ msgid "Generate Password"
 msgstr ""
 
 #: ../../../app/views/passwords/new.html.erb:113
-msgid ""
-"Tip: Only enter the password into the box.  Other identifying information can "
-"compromise security."
+msgid "Use the button above to generate a random password."
 msgstr ""
 
 #: ../../../app/views/passwords/new.html.erb:114
+msgid ""
+"Tip: Only enter a password into the box.  Other identifying information can co"
+"mpromise security."
+msgstr ""
+
+#: ../../../app/views/passwords/new.html.erb:115
 msgid ""
 "All passwords are encrypted prior to storage and are available to only those w"
 "ith the secret link.  Once expired, encrypted passwords are unequivocally dele"
 "ted from the database."
 msgstr ""
 
-#: ../../../app/views/passwords/new.html.erb:121
+#: ../../../app/views/passwords/new.html.erb:122
 #: ../../../app/views/shared/_pw_generator_modal.html.erb:70
 msgid "Save"
 msgstr ""
 
-#: ../../../app/views/passwords/new.html.erb:121
+#: ../../../app/views/passwords/new.html.erb:122
 msgid "the above settings as the page default."
 msgstr ""
 
-#: ../../../app/views/passwords/new.html.erb:129
+#: ../../../app/views/passwords/new.html.erb:130
 msgid "Push It!"
 msgstr ""
 
-#: ../../../app/views/passwords/new.html.erb:129
+#: ../../../app/views/passwords/new.html.erb:130
 msgid "Pushing..."
 msgstr ""
 

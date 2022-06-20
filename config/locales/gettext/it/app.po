@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pwpush 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2022-05-24 17:59+0200\n"
-"PO-Revision-Date: 2022-05-24 17:59+0200\n"
+"POT-Creation-Date: 2022-06-05 11:04+0200\n"
+"PO-Revision-Date: 2022-06-05 11:04+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -38,20 +38,20 @@ msgstr "Feedback inviato!"
 msgid "Could not send feedback.  Try again?"
 msgstr "Impossibile inviare feedback. Riprova?"
 
-#: ../../../app/controllers/passwords_controller.rb:134
+#: ../../../app/controllers/passwords_controller.rb:142
 msgid "That push doesn't belong to you."
 msgstr "Quella spinta non ti appartiene."
 
-#: ../../../app/controllers/passwords_controller.rb:148
+#: ../../../app/controllers/passwords_controller.rb:156
 msgid "That push does not belong to you."
 msgstr "Quella spinta non ti appartiene."
 
-#: ../../../app/controllers/passwords_controller.rb:153
+#: ../../../app/controllers/passwords_controller.rb:161
 msgid "That push is not deletable by viewers."
 msgstr "Quella spinta non è cancellabile dagli spettatori."
 
-#: ../../../app/controllers/passwords_controller.rb:169
-#: ../../../app/controllers/passwords_controller.rb:172
+#: ../../../app/controllers/passwords_controller.rb:177
+#: ../../../app/controllers/passwords_controller.rb:180
 msgid "The password has been deleted and secret URL expired."
 msgstr "La password è stata eliminata e l'URL segreto è scaduto."
 
@@ -1518,14 +1518,18 @@ msgid "Generate Password"
 msgstr "Genera password"
 
 #: ../../../app/views/passwords/new.html.erb:113
-msgid ""
-"Tip: Only enter the password into the box.  Other identifying information can "
-"compromise security."
-msgstr ""
-"Suggerimento: Inserisci solo la password nella casella. Altre informazioni di "
-"identificazione possono compromettere la sicurezza."
+msgid "Use the button above to generate a random password."
+msgstr "Usa il pulsante sopra per generare una password casuale."
 
 #: ../../../app/views/passwords/new.html.erb:114
+msgid ""
+"Tip: Only enter a password into the box.  Other identifying information can co"
+"mpromise security."
+msgstr ""
+"Suggerimento: inserisci solo una password nella casella. Altre informazioni di"
+" identificazione possono compromettere la sicurezza."
+
+#: ../../../app/views/passwords/new.html.erb:115
 msgid ""
 "All passwords are encrypted prior to storage and are available to only those w"
 "ith the secret link.  Once expired, encrypted passwords are unequivocally dele"
@@ -1536,20 +1540,20 @@ msgstr ""
 "te, le password crittografate vengono inequivocabilmente eliminate dal databas"
 "e."
 
-#: ../../../app/views/passwords/new.html.erb:121
+#: ../../../app/views/passwords/new.html.erb:122
 #: ../../../app/views/shared/_pw_generator_modal.html.erb:70
 msgid "Save"
 msgstr "Salva"
 
-#: ../../../app/views/passwords/new.html.erb:121
+#: ../../../app/views/passwords/new.html.erb:122
 msgid "the above settings as the page default."
 msgstr "le impostazioni di cui sopra come pagina predefinita."
 
-#: ../../../app/views/passwords/new.html.erb:129
+#: ../../../app/views/passwords/new.html.erb:130
 msgid "Push It!"
 msgstr "Spingilo!"
 
-#: ../../../app/views/passwords/new.html.erb:129
+#: ../../../app/views/passwords/new.html.erb:130
 msgid "Pushing..."
 msgstr "spingendo..."
 
