@@ -89,6 +89,18 @@ brand:
 #
 enable_logins: false
 
+## Disable Signups
+#
+# Disallow new user accounts to be created in the application.
+#
+# Set this after you have your desired user accounts created.  It will
+# not allow any further user account creation.
+#
+# Environment variable override:
+# PWP__DISABLE_SIGNUPS='false'
+#
+disable_signups: false
+
 ### Allow Anonymous
 #
 # By default, Password Pusher can be used by anonymous users to push
@@ -144,7 +156,7 @@ host_protocol: 'https'
 # Throttling enforces a minimum time interval
 # between subsequent HTTP requests from a particular client, as
 # well as by defining a maximum number of allowed HTTP requests
-# per a given time period (per minute, hourly, or daily).
+# per a given time period (per second, minute, hourly, or daily).
 #
 # See https://github.com/dryruby/rack-throttle#throttling-strategies
 # for a description of function.
@@ -295,3 +307,13 @@ language_codes:
 #
 # Environment Variable Override: PWP__DEFAULT_LOCALE='es'
 default_locale: :en
+
+# Configure the logging verbosity of the application.
+#
+# Valid values are: debug, info, warn, error, fatal
+log_level: 'warn'
+
+# In containers, it is usually desired to log to stdout
+# instead of using log files (e.g. log/production.log).
+#
+log_to_stdout: false

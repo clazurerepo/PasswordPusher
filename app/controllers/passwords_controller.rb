@@ -91,14 +91,23 @@ class PasswordsController < ApplicationController
     # See config/settings.yml
     authenticate_user! if Settings.enable_logins && !Settings.allow_anonymous
 
+    # binding.pry
     # params[:password] has to exist
+    # params[:password] has to be a ActionController::Parameters (Hash)
+    password_param = params.fetch(:password, {})
+    if !password_param.respond_to?(:fetch)
+      respond_to do |format|
+        format.html { redirect_to root_path, status: :bad_request, notice: 'Bad Request' }
+        format.json { render json: '{}', status: :bad_request }
+      end
+      return
+    end
+
     # params[:password][:payload] has to exist
     # params[:password][:payload] can't be blank
-    # params[:password][:payload] can't be longer than 1 megabyte
-
-    payload_param = params.fetch(:password, {}).fetch(:payload, '')
-    if !payload_param.is_a?(String) || payload_param.blank? || payload_param.length > 1.megabyte
-
+    # params[:password][:payload] must have a length between 1 and 1 megabyte
+    payload_param = password_param.fetch(:payload, '')
+    unless payload_param.is_a?(String) && payload_param.length.between?(1, 1.megabyte)
       respond_to do |format|
         format.html { redirect_to root_path, status: :bad_request, notice: 'Bad Request' }
         format.json { render json: '{}', status: :bad_request }
@@ -150,7 +159,25 @@ class PasswordsController < ApplicationController
   end
 
   def preliminary
-    @password = Password.find_by_url_token!(params[:id])
+    begin
+      @password = Password.find_by_url_token!(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      # Showing a 404 reveals that this Secret URL never existed
+      # which is an information leak (not a secret anymore)
+      #
+      # We also don't want data in general. We entirely delete old pushes that:
+      # 1. have expired (payloads already deleted long ago)
+      # 2. are anonymous/not linked to a user account (audit log not needed)
+      #
+      # When not found, show the 'expired' page so even very old secret URLs
+      # when clicked they will be accurate - this secret URL has expired.
+      # No easy fix for JSON unfortunately as we don't have a record to show.
+      respond_to do |format|
+        format.html { render template: 'passwords/show_expired', layout: 'naked' }
+        format.json { render json: { error: 'not-found' }.to_json, status: 404 }
+      end
+      return
+    end
 
     respond_to do |format|
       format.html { render action: 'preliminary', layout: 'naked' }

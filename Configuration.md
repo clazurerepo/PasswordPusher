@@ -72,6 +72,7 @@ _All_ of the following environments need to be set (except SMTP authentication i
 | PWP__HOST_DOMAIN | Used to build fully qualified URLs in emails.  Where is your instance hosted? | `pwpush.com` |
 | PWP__HOST_PROTOCOL | The protocol to access your Password Pusher instance.  HTTPS advised. | `https` |
 | PWP__MAIL__MAILER_SENDER | This is the "From" address in sent emails. | '"Company Name" <user@example.com>' |
+| PWP__DISABLE_SIGNUPS| Once your user accounts are created, you can set this to disable any further user account creation.  Sign up links and related backend functionality is disabled when `true`. | `false` |
 
 ## Shell Example
 
@@ -108,7 +109,10 @@ This can be done with the following environment variables:
 | PWP__BRAND__LIGHT_LOGO | Site logo image for the light theme. | `media/img/logo-transparent-sm-bare.png` |
 | PWP__BRAND__DARK_LOGO | Site logo image for the dark theme. | `media/img/logo-transparent-sm-bare.png` |
 
-See the `brand` section of [settings.yml](https://github.com/pglombardo/PasswordPusher/blob/master/config/settings.yml) for more details, examples and description.
+## See Also
+
+* the `brand` section of [settings.yml](https://github.com/pglombardo/PasswordPusher/blob/master/config/settings.yml) for more details, examples and description.
+* [this issue comment](https://github.com/pglombardo/PasswordPusher/issues/432#issuecomment-1282158006) on how to mount images into the contianer and set your environment variables accordingly
 
 
 # Google Analytics
@@ -118,6 +122,29 @@ See the `brand` section of [settings.yml](https://github.com/pglombardo/Password
 | GA_ENABLE | The existence of this variable will enable the Google Analytics for the application.  See `app/views/layouts/_ga.html.erb`.|
 | GA_ACCOUNT | The Google Analytics account id.  E.g. `UA-XXXXXXXX-X` |
 | GA_DOMAIN | The domain where the application is hosted.  E.g. `pwpush.com` |
+
+# Throttling
+
+Throttling enforces a minimum time interval
+between subsequent HTTP requests from a particular client, as
+well as by defining a maximum number of allowed HTTP requests
+per a given time period (per second, minute, hourly, or daily).
+
+| Environment Variable | Description | Default Value |
+| --------- | ------------------ | --- |
+| PWP__THROTTLING__DAILY | The maximum number of allowed HTTP requests per day | `1000` |
+| PWP__THROTTLING__HOURLY | The maximum number of allowed HTTP requests per hour | `100` |
+| PWP__THROTTLING__MINUTE | The maximum number of allowed HTTP requests per minute | `30` |
+| PWP__THROTTLING__SECOND | The maximum number of allowed HTTP requests per second | `2` |
+
+
+# Logging
+
+| Environment Variable | Description |
+| --------- | ------------------ |
+| PWP__LOG_LEVEL | Set the logging level for the application.  Valid values are: `debug`, `info`, `warn`, `error` and `fatal`.  Note: lowercase.
+| PWP__LOG_TO_STDOUT | Set to 'true' to have log output sent to STDOUT instead of log files.  Default: `false`
+
 
 # Forcing SSL Links
 
