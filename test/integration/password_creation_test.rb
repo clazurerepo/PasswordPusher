@@ -1,6 +1,26 @@
 require 'test_helper'
 
 class PasswordCreationTest < ActionDispatch::IntegrationTest
+  def test_textarea_has_safeties
+    get '/'
+    assert_response :success
+
+    # Validate some elements
+    text_area = css_select 'textarea#password_payload.form-control'
+
+    assert text_area.attribute('spellcheck')
+    assert text_area.attribute('spellcheck').value == "false"
+
+    assert text_area.attribute('autocomplete')
+    assert text_area.attribute('autocomplete').value == "off"
+
+    assert text_area.attribute('autofocus')
+    assert text_area.attribute('autofocus').value == "autofocus"
+
+    assert text_area.attribute('required')
+    assert text_area.attribute('required').value == "required"
+  end
+
   def test_password_creation
     get '/'
     assert_response :success
@@ -98,7 +118,7 @@ class PasswordCreationTest < ActionDispatch::IntegrationTest
     deletable_checkbox = css_select '#password_deletable_by_viewer'
     assert(deletable_checkbox)
 
-    found = DELETABLE_PASSWORDS_ENABLED
+    found = Settings.enable_deletable_pushes
     deletable_checkbox.each do |item|
       if item.content.include?('Allow viewers to optionally delete password before expiration')
         found = true
@@ -111,7 +131,7 @@ class PasswordCreationTest < ActionDispatch::IntegrationTest
     assert(deletable_checkbox.length == 1)
 
     # DELETABLE_PASSWORDS_DEFAULT determines initial check state
-    if DELETABLE_PASSWORDS_DEFAULT == true
+    if Settings.deletable_pushes_default == true
       assert(deletable_checkbox.first.attributes['checked'].value == 'checked')
     else
       assert(deletable_checkbox.first.attributes['checked'].nil?)

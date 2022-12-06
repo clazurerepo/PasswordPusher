@@ -15,7 +15,11 @@ class Password < ApplicationRecord
   end
 
   def views_remaining
-    [(expire_after_views - views.where(kind: 0).size), 0].max
+    [(expire_after_views - view_count), 0].max
+  end
+
+  def view_count
+    views.where(kind: 0).size
   end
 
   def successful_views
@@ -71,15 +75,15 @@ class Password < ApplicationRecord
     return if expired
 
     # Range checking
-    self.expire_after_days  ||= EXPIRE_AFTER_DAYS_DEFAULT
-    self.expire_after_views ||= EXPIRE_AFTER_VIEWS_DEFAULT
+    self.expire_after_days  ||= Settings.expire_after_days_default
+    self.expire_after_views ||= Settings.expire_after_views_default
 
-    unless expire_after_days.between?(EXPIRE_AFTER_DAYS_MIN, EXPIRE_AFTER_DAYS_MAX)
-      self.expire_after_days = EXPIRE_AFTER_DAYS_DEFAULT
+    unless expire_after_days.between?(Settings.expire_after_days_min, Settings.expire_after_days_max)
+      self.expire_after_days = Settings.expire_after_days_default
     end
 
-    unless expire_after_views.between?(EXPIRE_AFTER_VIEWS_MIN, EXPIRE_AFTER_VIEWS_MAX)
-      self.expire_after_views = EXPIRE_AFTER_VIEWS_DEFAULT
+    unless expire_after_views.between?(Settings.expire_after_views_min, Settings.expire_after_views_max)
+      self.expire_after_views = Settings.expire_after_views_default
     end
 
     return if new_record?
