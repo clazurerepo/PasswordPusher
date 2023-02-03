@@ -2,6 +2,8 @@ class Password < ApplicationRecord
   has_many :views, dependent: :destroy
   has_encrypted :payload, :note
 
+  belongs_to :user, optional: true
+  
   def to_param
     url_token.to_s
   end
@@ -75,15 +77,15 @@ class Password < ApplicationRecord
     return if expired
 
     # Range checking
-    self.expire_after_days  ||= Settings.expire_after_days_default
-    self.expire_after_views ||= Settings.expire_after_views_default
+    self.expire_after_days  ||= Settings.pw.expire_after_days_default
+    self.expire_after_views ||= Settings.pw.expire_after_views_default
 
-    unless expire_after_days.between?(Settings.expire_after_days_min, Settings.expire_after_days_max)
-      self.expire_after_days = Settings.expire_after_days_default
+    unless expire_after_days.between?(Settings.pw.expire_after_days_min, Settings.pw.expire_after_days_max)
+      self.expire_after_days = Settings.pw.expire_after_days_default
     end
 
-    unless expire_after_views.between?(Settings.expire_after_views_min, Settings.expire_after_views_max)
-      self.expire_after_views = Settings.expire_after_views_default
+    unless expire_after_views.between?(Settings.pw.expire_after_views_min, Settings.pw.expire_after_views_max)
+      self.expire_after_views = Settings.pw.expire_after_views_default
     end
 
     return if new_record?
