@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PasswordPusher 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2023-02-03 10:28+0100\n"
-"PO-Revision-Date: 2023-02-03 10:28+0100\n"
+"POT-Creation-Date: 2023-05-05 10:47+0200\n"
+"PO-Revision-Date: 2023-05-05 10:47+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Serbian\n"
 "Language: sr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "%100<12||n%100>14))?1:2);\n"
 "\n"
 
-#: ../../../app/controllers/application_controller.rb:8
+#: ../../../app/controllers/application_controller.rb:20
 msgid "Not Found"
 msgstr "Није пронађен"
 
@@ -43,143 +43,147 @@ msgstr ""
 "Није могуће послати повратне информације. Да ли сте положили тест хуманости? В"
 "ажећа имејл адреса? Покушајте поново?"
 
-#: ../../../app/controllers/file_pushes_controller.rb:128
+#: ../../../app/controllers/file_pushes_controller.rb:160
+#: ../../../app/controllers/passwords_controller.rb:159
+#: ../../../app/controllers/urls_controller.rb:150
+msgid ""
+"That passphrase is incorrect.  Please try again or contact the person or organ"
+"ization that sent you this link."
+msgstr ""
+"Та приступна фраза је нетачна. Покушајте поново или контактирајте особу или ор"
+"ганизацију која вам је послала ову везу."
+
+#: ../../../app/controllers/file_pushes_controller.rb:221
 msgid ""
 "Only 10 active file pushes allowed while in Beta and until things are stable. "
 "If it's an option, you can manually expire existing pushes before creating new"
 " ones."
 msgstr ""
+"Дозвољено је само 10 активних гурања датотека док је у бета верзији и док ства"
+"ри не буду стабилне. Ако је то опција, можете ручно да истекнете постојеће пус"
+"х-ове пре креирања нових."
 
-#: ../../../app/controllers/file_pushes_controller.rb:221
-#: ../../../app/controllers/passwords_controller.rb:202
-#: ../../../app/controllers/urls_controller.rb:198
+#: ../../../app/controllers/file_pushes_controller.rb:315
+#: ../../../app/controllers/passwords_controller.rb:297
+#: ../../../app/controllers/urls_controller.rb:290
 msgid "That push doesn't belong to you."
 msgstr "То гурање не припада теби."
 
-#: ../../../app/controllers/file_pushes_controller.rb:251
-#: ../../../app/controllers/passwords_controller.rb:232
-#: ../../../app/controllers/urls_controller.rb:228
-#: ../../../app/controllers/urls_controller.rb:232
+#: ../../../app/controllers/file_pushes_controller.rb:345
+#: ../../../app/controllers/passwords_controller.rb:327
+#: ../../../app/controllers/urls_controller.rb:320
+#: ../../../app/controllers/urls_controller.rb:324
 msgid "That push does not belong to you."
 msgstr "То гурање не припада теби."
 
-#: ../../../app/controllers/file_pushes_controller.rb:256
-#: ../../../app/controllers/passwords_controller.rb:237
+#: ../../../app/controllers/file_pushes_controller.rb:350
+#: ../../../app/controllers/passwords_controller.rb:332
 msgid "That push is not deletable by viewers."
 msgstr "Гледаоци не могу брисати тај притисак."
 
-#: ../../../app/controllers/file_pushes_controller.rb:262
-#: ../../../app/controllers/file_pushes_controller.rb:263
-#: ../../../app/controllers/passwords_controller.rb:243
-#: ../../../app/controllers/passwords_controller.rb:244
-#: ../../../app/controllers/urls_controller.rb:238
-#: ../../../app/controllers/urls_controller.rb:239
+#: ../../../app/controllers/file_pushes_controller.rb:356
+#: ../../../app/controllers/file_pushes_controller.rb:357
+#: ../../../app/controllers/passwords_controller.rb:338
+#: ../../../app/controllers/passwords_controller.rb:339
+#: ../../../app/controllers/urls_controller.rb:330
+#: ../../../app/controllers/urls_controller.rb:331
 msgid "That push is already expired."
-msgstr ""
+msgstr "Тај притисак је већ истекао."
 
-#: ../../../app/controllers/file_pushes_controller.rb:281
-#: ../../../app/controllers/file_pushes_controller.rb:284
-#: ../../../app/controllers/passwords_controller.rb:261
-#: ../../../app/controllers/passwords_controller.rb:264
-#: ../../../app/controllers/urls_controller.rb:256
-#: ../../../app/controllers/urls_controller.rb:259
-#: ../../../app/views/file_pushes/audit.html.erb:84
-#: ../../../app/views/file_pushes/audit.html.erb:241
-#: ../../../app/views/passwords/audit.html.erb:84
-#: ../../../app/views/passwords/audit.html.erb:175
-#: ../../../app/views/urls/audit.html.erb:71
-#: ../../../app/views/urls/audit.html.erb:157
+#: ../../../app/controllers/file_pushes_controller.rb:375
+#: ../../../app/controllers/file_pushes_controller.rb:378
+#: ../../../app/controllers/passwords_controller.rb:356
+#: ../../../app/controllers/passwords_controller.rb:359
+#: ../../../app/controllers/urls_controller.rb:348
+#: ../../../app/controllers/urls_controller.rb:351
+#: ../../../app/views/file_pushes/audit.html.erb:97
+#: ../../../app/views/file_pushes/audit.html.erb:254
+#: ../../../app/views/passwords/audit.html.erb:97
+#: ../../../app/views/passwords/audit.html.erb:188
+#: ../../../app/views/urls/audit.html.erb:84
+#: ../../../app/views/urls/audit.html.erb:170
 msgid "The push content has been deleted and the secret URL expired."
 msgstr "Пусх садржај је избрисан, а тајни УРЛ је истекао."
 
-#: ../../../app/controllers/urls_controller.rb:110
-msgid "Invalid URL: Must be a valid URL and start with http:// or https://"
-msgstr ""
-
-#: ../../../app/helpers/application_helper.rb:7
-#: ../../../app/views/devise/mailer/email_changed.html.erb:8
-#: ../../../app/views/devise/mailer/password_change.html.erb:8
-#: ../../../app/views/layouts/application.html.erb:9
-#: ../../../app/views/layouts/bare.html.erb:9
-#: ../../../app/views/layouts/login.html.erb:9
-#: ../../../app/views/layouts/naked.html.erb:9
-#: ../../../app/views/shared/_email_footer.html.erb:8
-#: ../../../app/views/shared/_header.html.erb:21
-msgid "Password Pusher"
-msgstr "Пассворд Пусхер"
-
-#: ../../../app/models/feedback.rb:22
-msgid "Password Pusher Feedback"
-msgstr "Повратне информације о покретању лозинке"
-
-#: ../../../app/views/devise/mailer/confirmation_instructions.html.erb:1
-msgid "Welcome!"
-msgstr "Добродошли!"
-
-#: ../../../app/views/devise/mailer/confirmation_instructions.html.erb:3
-msgid "Here is your password: "
-msgstr "Ево ваше лозинке:"
-
-#: ../../../app/views/devise/mailer/confirmation_instructions.html.erb:6
-msgid "Just kidding!"
-msgstr "Само се шалим!"
-
-#: ../../../app/views/devise/mailer/confirmation_instructions.html.erb:6
-msgid "Never have to do anything like that ever again with Password Pusher."
-msgstr "Никада више не морате да радите тако нешто са Пассворд Пусхер-ом."
+#: ../../../app/controllers/urls_controller.rb:201
+msgid "Invalid URL: Must have a valid URI scheme."
+msgstr "Неважећи УРЛ: Мора да има важећу УРИ шему."
 
 #: ../../../app/views/devise/mailer/confirmation_instructions.html.erb:8
-msgid "You can confirm your account email through the link below"
-msgstr "Можете потврдити е-пошту свог налога путем линка испод"
+#: ../../../app/views/devise/mailer/email_changed.html.erb:8
+#: ../../../app/views/devise/mailer/password_change.html.erb:8
+#: ../../../app/views/devise/mailer/reset_password_instructions.html.erb:8
+#: ../../../app/views/devise/mailer/unlock_instructions.html.erb:8
+#: ../../../app/views/layouts/application.html.erb:8
+#: ../../../app/views/layouts/bare.html.erb:8
+#: ../../../app/views/layouts/login.html.erb:8
+#: ../../../app/views/layouts/naked.html.erb:8
+msgid ""
+"Password Pusher is an application to securely send passwords over the web. Lin"
+"ks to passwords expire after a certain number of views and/or time has passed."
+msgstr ""
+"Пассворд Пусхер је апликација за безбедно слање лозинки преко веба. Везе ка ло"
+"зинкама истичу након одређеног броја прегледа и/или времена."
 
-#: ../../../app/views/devise/mailer/confirmation_instructions.html.erb:10
-msgid "Confirm my account"
-msgstr "Потврди мој налог"
+#: ../../../app/views/devise/mailer/confirmation_instructions.html.erb:24
+msgid ""
+"Your account has been created but you must confirm that you own this email add"
+"ress."
+msgstr "Ваш налог је креиран, али морате потврдити да сте власник ове адресе е-поште."
 
-#: ../../../app/views/devise/mailer/confirmation_instructions.html.erb:13
-msgid "Thanks for signing up!"
-msgstr "Хвала што сте се пријавили!"
+#: ../../../app/views/devise/mailer/confirmation_instructions.html.erb:27
+msgid "You can confirm your account email by"
+msgstr "Можете потврдити е-пошту свог налога на"
 
-#: ../../../app/views/devise/mailer/email_changed.html.erb:1
-#: ../../../app/views/devise/mailer/password_change.html.erb:1
-#: ../../../app/views/devise/mailer/reset_password_instructions.html.erb:1
-#: ../../../app/views/devise/mailer/unlock_instructions.html.erb:1
-msgid "Hello"
-msgstr "Здраво"
+#: ../../../app/views/devise/mailer/confirmation_instructions.html.erb:28
+#: ../../../app/views/devise/mailer/reset_password_instructions.html.erb:27
+msgid "by clicking this link"
+msgstr "кликом на ову везу"
 
-#: ../../../app/views/devise/mailer/email_changed.html.erb:4
+#: ../../../app/views/devise/mailer/confirmation_instructions.html.erb:29
+#: ../../../app/views/devise/mailer/reset_password_instructions.html.erb:28
+msgid "or by copying and pasting the following URL into your browser:"
+msgstr "или копирањем и лепљењем следеће УРЛ адресе у прегледач:"
+
+#: ../../../app/views/devise/mailer/confirmation_instructions.html.erb:36
+msgid "If you didn't create an account, no action is required."
+msgstr "Ако нисте отворили налог, не морате ништа да предузимате."
+
+#: ../../../app/views/devise/mailer/email_changed.html.erb:26
 msgid "We're contacting you to notify you that your email at"
 msgstr "Контактирамо вас да бисмо вас обавестили да је ваша е-пошта на"
 
-#: ../../../app/views/devise/mailer/email_changed.html.erb:12
+#: ../../../app/views/devise/mailer/email_changed.html.erb:30
 msgid "is being changed to %s"
 msgstr "се мења у %s"
 
-#: ../../../app/views/devise/mailer/email_changed.html.erb:14
+#: ../../../app/views/devise/mailer/email_changed.html.erb:32
 msgid "has been changed to %s"
 msgstr "је промењено у %s"
 
-#: ../../../app/views/devise/mailer/password_change.html.erb:4
+#: ../../../app/views/devise/mailer/password_change.html.erb:25
 msgid "We're contacting you to notify you that your password has been changed on"
 msgstr "Контактирамо вас да бисмо вас обавестили да је ваша лозинка промењена"
 
-#: ../../../app/views/devise/mailer/reset_password_instructions.html.erb:3
+#: ../../../app/views/devise/mailer/password_change.html.erb:28
 msgid ""
-"Someone has requested a link to change your password. You can do this through "
-"the link below."
+"If you didn't initiate this and it wasn't your intention, please contact us as"
+" soon as possible."
 msgstr ""
-"Неко је затражио везу за промену ваше лозинке. То можете учинити путем линка и"
-"спод."
+"Ако ово нисте иницирали и није вам била намера, контактирајте нас што је пре м"
+"огуће."
 
-#: ../../../app/views/devise/mailer/reset_password_instructions.html.erb:5
-msgid "Change my password"
-msgstr "Промени моју лозинку"
+#: ../../../app/views/devise/mailer/reset_password_instructions.html.erb:26
+msgid ""
+"Someone has requested a link to change your password. You can proceed with thi"
+"s action"
+msgstr "Неко је затражио везу за промену ваше лозинке. Можете наставити са овом радњом"
 
-#: ../../../app/views/devise/mailer/reset_password_instructions.html.erb:7
-msgid "If you didn't request this, please ignore this email."
-msgstr "Ако ово нисте тражили, занемарите ову е-пошту."
+#: ../../../app/views/devise/mailer/reset_password_instructions.html.erb:36
+msgid "If you didn't request this change, you can safely delete this email."
+msgstr "Ако нисте тражили ову промену, можете безбедно да избришете ову е-пошту."
 
-#: ../../../app/views/devise/mailer/reset_password_instructions.html.erb:8
+#: ../../../app/views/devise/mailer/reset_password_instructions.html.erb:37
 msgid ""
 "Your password won't change until you access the link above and create a new on"
 "e."
@@ -187,19 +191,23 @@ msgstr ""
 "Ваша лозинка се неће променити док не приступите горњој вези и не направите но"
 "ву."
 
-#: ../../../app/views/devise/mailer/unlock_instructions.html.erb:3
+#: ../../../app/views/devise/mailer/unlock_instructions.html.erb:26
 msgid ""
 "Your account has been locked due to an excessive number of unsuccessful sign i"
 "n attempts."
 msgstr "Ваш налог је закључан због превеликог броја неуспешних покушаја пријављивања."
 
-#: ../../../app/views/devise/mailer/unlock_instructions.html.erb:5
-msgid "Click the link below to unlock your account"
-msgstr "Кликните на везу испод да бисте откључали свој налог"
+#: ../../../app/views/devise/mailer/unlock_instructions.html.erb:30
+msgid "Click this link"
+msgstr "Кликните на ову везу"
 
-#: ../../../app/views/devise/mailer/unlock_instructions.html.erb:7
-msgid "Unlock my account"
-msgstr "Откључај мој налог"
+#: ../../../app/views/devise/mailer/unlock_instructions.html.erb:31
+msgid ""
+"to unlock your account or by copying and pasting the following URL into your b"
+"rowser:"
+msgstr ""
+"да бисте откључали свој налог или копирањем и лепљењем следеће УРЛ адресе у пр"
+"егледач:"
 
 #: ../../../app/views/devise/passwords/edit.html.erb:9
 msgid "New password"
@@ -222,7 +230,7 @@ msgid "Current Password"
 msgstr "Тренутна лозинка"
 
 #: ../../../app/views/devise/registrations/token.html.erb:2
-#: ../../../app/views/shared/_header.html.erb:52
+#: ../../../app/views/shared/_header.html.erb:44
 msgid "API Token"
 msgstr "АПИ токен"
 
@@ -289,20 +297,20 @@ msgid "A new token will be generated in its place."
 msgstr "На његовом месту ће се генерисати нови токен."
 
 #: ../../../app/views/devise/registrations/token.html.erb:49
-#: ../../../app/views/file_pushes/audit.html.erb:201
-#: ../../../app/views/file_pushes/show.html.erb:72
-#: ../../../app/views/passwords/audit.html.erb:132
-#: ../../../app/views/passwords/show.html.erb:56
-#: ../../../app/views/urls/audit.html.erb:119
+#: ../../../app/views/file_pushes/audit.html.erb:214
+#: ../../../app/views/file_pushes/show.html.erb:74
+#: ../../../app/views/passwords/audit.html.erb:145
+#: ../../../app/views/passwords/show.html.erb:58
+#: ../../../app/views/urls/audit.html.erb:132
 msgid "Are you sure?"
 msgstr "Да ли сте сигурни?"
 
 #: ../../../app/views/devise/registrations/token.html.erb:52
-#: ../../../app/views/file_pushes/audit.html.erb:204
-#: ../../../app/views/file_pushes/show.html.erb:75
-#: ../../../app/views/passwords/audit.html.erb:135
-#: ../../../app/views/passwords/show.html.erb:59
-#: ../../../app/views/urls/audit.html.erb:122
+#: ../../../app/views/file_pushes/audit.html.erb:217
+#: ../../../app/views/file_pushes/show.html.erb:77
+#: ../../../app/views/passwords/audit.html.erb:148
+#: ../../../app/views/passwords/show.html.erb:61
+#: ../../../app/views/urls/audit.html.erb:135
 msgid "Cancel"
 msgstr "Поништити, отказати"
 
@@ -311,11 +319,11 @@ msgid "Delete & Regenerate"
 msgstr "Делете & Регенерате"
 
 #: ../../../app/views/devise/registrations/token.html.erb:53
-#: ../../../app/views/file_pushes/audit.html.erb:205
-#: ../../../app/views/file_pushes/show.html.erb:76
-#: ../../../app/views/passwords/audit.html.erb:136
-#: ../../../app/views/passwords/show.html.erb:60
-#: ../../../app/views/urls/audit.html.erb:123
+#: ../../../app/views/file_pushes/audit.html.erb:218
+#: ../../../app/views/file_pushes/show.html.erb:78
+#: ../../../app/views/passwords/audit.html.erb:149
+#: ../../../app/views/passwords/show.html.erb:62
+#: ../../../app/views/urls/audit.html.erb:136
 msgid "Processing..."
 msgstr "Обрада..."
 
@@ -329,7 +337,7 @@ msgid "Password"
 msgstr "Лозинка"
 
 #: ../../../app/views/devise/shared/_links.html.erb:38
-#: ../../../app/views/shared/_header.html.erb:73
+#: ../../../app/views/shared/_header.html.erb:65
 msgid "Language"
 msgstr "Језик"
 
@@ -340,7 +348,7 @@ msgstr "Хвала на повратним информацијама! Уско�
 #: ../../../app/views/feedbacks/new.html.erb:1
 #: ../../../app/views/feedbacks/new.html.erb:2
 #: ../../../app/views/feedbacks/new.html.erb:42
-#: ../../../app/views/shared/_footer.html.erb:53
+#: ../../../app/views/shared/_footer.html.erb:54
 msgid "Send Feedback"
 msgstr "Пошаљи повратне информације"
 
@@ -375,15 +383,15 @@ msgstr "Оставите ово поље празним!"
 #: ../../../app/views/file_pushes/active.html.erb:1
 #: ../../../app/views/file_pushes/active.html.erb:18
 msgid "Active File Pushes"
-msgstr ""
+msgstr "Ацтиве Филе Пусхес"
 
 #: ../../../app/views/file_pushes/active.html.erb:8
 msgid "You currently have no active file pushes."
-msgstr ""
+msgstr "Тренутно немате активних гурања датотека."
 
 #: ../../../app/views/file_pushes/active.html.erb:13
 msgid "Push Some Files Now"
-msgstr ""
+msgstr "Гурните неке датотеке одмах"
 
 #: ../../../app/views/file_pushes/active.html.erb:20
 #: ../../../app/views/file_pushes/expired.html.erb:16
@@ -417,46 +425,46 @@ msgstr "Белешка"
 
 #: ../../../app/views/file_pushes/active.html.erb:26
 msgid "File Count"
-msgstr ""
+msgstr "Број датотека"
 
 #: ../../../app/views/file_pushes/active.html.erb:27
 #: ../../../app/views/file_pushes/new.html.erb:10
-#: ../../../app/views/file_pushes/new.html.erb:80
+#: ../../../app/views/file_pushes/new.html.erb:77
 #: ../../../app/views/passwords/active.html.erb:26
 #: ../../../app/views/passwords/new.html.erb:10
-#: ../../../app/views/passwords/new.html.erb:104
+#: ../../../app/views/passwords/new.html.erb:87
 #: ../../../app/views/urls/active.html.erb:26
 #: ../../../app/views/urls/new.html.erb:10
-#: ../../../app/views/urls/new.html.erb:75
+#: ../../../app/views/urls/new.html.erb:72
 msgid "Views"
 msgstr "Погледи"
 
 #: ../../../app/views/file_pushes/active.html.erb:28
 #: ../../../app/views/file_pushes/new.html.erb:6
-#: ../../../app/views/file_pushes/new.html.erb:60
+#: ../../../app/views/file_pushes/new.html.erb:59
 #: ../../../app/views/passwords/active.html.erb:27
 #: ../../../app/views/passwords/new.html.erb:6
-#: ../../../app/views/passwords/new.html.erb:84
+#: ../../../app/views/passwords/new.html.erb:70
 #: ../../../app/views/urls/active.html.erb:27
 #: ../../../app/views/urls/new.html.erb:6
-#: ../../../app/views/urls/new.html.erb:55
+#: ../../../app/views/urls/new.html.erb:53
 msgid "Days"
 msgstr "Дани"
 
 #: ../../../app/views/file_pushes/active.html.erb:39
 #: ../../../app/views/file_pushes/audit.html.erb:19
-#: ../../../app/views/file_pushes/audit.html.erb:257
-#: ../../../app/views/file_pushes/audit.html.erb:269
+#: ../../../app/views/file_pushes/audit.html.erb:270
+#: ../../../app/views/file_pushes/audit.html.erb:282
 #: ../../../app/views/file_pushes/expired.html.erb:31
 #: ../../../app/views/passwords/active.html.erb:38
 #: ../../../app/views/passwords/audit.html.erb:19
-#: ../../../app/views/passwords/audit.html.erb:191
-#: ../../../app/views/passwords/audit.html.erb:203
+#: ../../../app/views/passwords/audit.html.erb:204
+#: ../../../app/views/passwords/audit.html.erb:216
 #: ../../../app/views/passwords/expired.html.erb:32
 #: ../../../app/views/urls/active.html.erb:38
 #: ../../../app/views/urls/audit.html.erb:19
-#: ../../../app/views/urls/audit.html.erb:173
-#: ../../../app/views/urls/audit.html.erb:185
+#: ../../../app/views/urls/audit.html.erb:186
+#: ../../../app/views/urls/audit.html.erb:198
 #: ../../../app/views/urls/expired.html.erb:31
 msgid "None"
 msgstr "Ниједан"
@@ -487,7 +495,7 @@ msgstr "Дневник ревизије за %s"
 
 #: ../../../app/views/file_pushes/audit.html.erb:4
 msgid "Audit Log for File Push"
-msgstr ""
+msgstr "Дневник ревизије за гурање датотека"
 
 #: ../../../app/views/file_pushes/audit.html.erb:6
 #: ../../../app/views/passwords/audit.html.erb:6
@@ -502,8 +510,11 @@ msgid "Secret URL for this push"
 msgstr "Тајни УРЛ за овај пусх"
 
 #: ../../../app/views/file_pushes/audit.html.erb:15
+#: ../../../app/views/file_pushes/new.html.erb:139
 #: ../../../app/views/passwords/audit.html.erb:15
+#: ../../../app/views/passwords/new.html.erb:162
 #: ../../../app/views/urls/audit.html.erb:15
+#: ../../../app/views/urls/new.html.erb:112
 msgid "Reference Note"
 msgstr "Референтна напомена"
 
@@ -543,7 +554,7 @@ msgstr[2] "Погледи"
 #: ../../../app/views/file_pushes/audit.html.erb:36
 #: ../../../app/views/urls/audit.html.erb:36
 msgid "The push expires after this number of views."
-msgstr ""
+msgstr "Гурање истиче након овог броја прегледа."
 
 #: ../../../app/views/file_pushes/audit.html.erb:43
 #: ../../../app/views/file_pushes/new.html.erb:5
@@ -560,7 +571,7 @@ msgstr[2] "Дани"
 #: ../../../app/views/file_pushes/audit.html.erb:45
 #: ../../../app/views/urls/audit.html.erb:45
 msgid "The push expires after this number of days."
-msgstr ""
+msgstr "Гурање истиче након овог броја дана."
 
 #: ../../../app/views/file_pushes/audit.html.erb:50
 #: ../../../app/views/passwords/audit.html.erb:50
@@ -585,7 +596,7 @@ msgstr "Фалсе"
 
 #: ../../../app/views/file_pushes/audit.html.erb:58
 msgid "This allows end users to delete content once retrieved."
-msgstr ""
+msgstr "Ово омогућава крајњим корисницима да избришу садржај када се преузме."
 
 #: ../../../app/views/file_pushes/audit.html.erb:63
 #: ../../../app/views/passwords/audit.html.erb:63
@@ -594,278 +605,301 @@ msgid "1-click Retrieval Step"
 msgstr "Корак преузимања једним кликом"
 
 #: ../../../app/views/file_pushes/audit.html.erb:71
-#: ../../../app/views/file_pushes/new.html.erb:102
+#: ../../../app/views/file_pushes/new.html.erb:96
 #: ../../../app/views/passwords/audit.html.erb:71
-#: ../../../app/views/passwords/new.html.erb:126
+#: ../../../app/views/passwords/new.html.erb:106
 #: ../../../app/views/urls/audit.html.erb:58
 msgid "Helps to avoid chat systems and URL scanners from eating up views."
 msgstr "Помаже да се избегне да системи ћаскања и скенери УРЛ-ова не поједу прегледе."
 
-#: ../../../app/views/file_pushes/audit.html.erb:77
-#: ../../../app/views/passwords/audit.html.erb:77
-#: ../../../app/views/urls/audit.html.erb:64
+#: ../../../app/views/file_pushes/audit.html.erb:76
+#: ../../../app/views/file_pushes/new.html.erb:117
+#: ../../../app/views/passwords/audit.html.erb:76
+#: ../../../app/views/passwords/new.html.erb:127
+#: ../../../app/views/urls/audit.html.erb:63
+#: ../../../app/views/urls/new.html.erb:101
+msgid "Passphrase Lockdown"
+msgstr "Закључавање шифре"
+
+#: ../../../app/views/file_pushes/audit.html.erb:79
+#: ../../../app/views/file_pushes/audit.html.erb:137
+#: ../../../app/views/passwords/audit.html.erb:79
+#: ../../../app/views/urls/audit.html.erb:66
+msgid "No"
+msgstr "Не"
+
+#: ../../../app/views/file_pushes/audit.html.erb:81
+#: ../../../app/views/file_pushes/audit.html.erb:139
+#: ../../../app/views/passwords/audit.html.erb:81
+#: ../../../app/views/urls/audit.html.erb:68
+msgid "Yes"
+msgstr "да"
+
+#: ../../../app/views/file_pushes/audit.html.erb:84
+#: ../../../app/views/passwords/audit.html.erb:84
+#: ../../../app/views/urls/audit.html.erb:71
+msgid "Require recipients to enter a passphrase to view this push."
+msgstr "Захтевајте од прималаца да унесу приступну фразу да би видели овај пусх."
+
+#: ../../../app/views/file_pushes/audit.html.erb:90
+#: ../../../app/views/passwords/audit.html.erb:90
+#: ../../../app/views/urls/audit.html.erb:77
 msgid "Current Status"
 msgstr "Тренутни статус"
 
-#: ../../../app/views/file_pushes/audit.html.erb:81
-#: ../../../app/views/passwords/audit.html.erb:81
-#: ../../../app/views/urls/audit.html.erb:68
+#: ../../../app/views/file_pushes/audit.html.erb:94
+#: ../../../app/views/passwords/audit.html.erb:94
+#: ../../../app/views/urls/audit.html.erb:81
 msgid "State:"
 msgstr "Стање:"
 
-#: ../../../app/views/file_pushes/audit.html.erb:83
-#: ../../../app/views/passwords/audit.html.erb:83
+#: ../../../app/views/file_pushes/audit.html.erb:96
+#: ../../../app/views/passwords/audit.html.erb:96
 #: ../../../app/views/shared/_dashboard_header.html.erb:26
 #: ../../../app/views/shared/_dashboard_header.html.erb:29
 #: ../../../app/views/shared/_dashboard_header.html.erb:32
-#: ../../../app/views/urls/audit.html.erb:70
+#: ../../../app/views/urls/audit.html.erb:83
 msgid "Expired"
 msgstr "Истекао"
 
-#: ../../../app/views/file_pushes/audit.html.erb:86
-#: ../../../app/views/passwords/audit.html.erb:86
+#: ../../../app/views/file_pushes/audit.html.erb:99
+#: ../../../app/views/passwords/audit.html.erb:99
 #: ../../../app/views/shared/_dashboard_header.html.erb:25
 #: ../../../app/views/shared/_dashboard_header.html.erb:28
 #: ../../../app/views/shared/_dashboard_header.html.erb:31
-#: ../../../app/views/urls/audit.html.erb:73
+#: ../../../app/views/urls/audit.html.erb:86
 msgid "Active"
 msgstr "Ацтиве"
 
-#: ../../../app/views/file_pushes/audit.html.erb:87
-#: ../../../app/views/passwords/audit.html.erb:87
-#: ../../../app/views/urls/audit.html.erb:74
+#: ../../../app/views/file_pushes/audit.html.erb:100
+#: ../../../app/views/passwords/audit.html.erb:100
+#: ../../../app/views/urls/audit.html.erb:87
 msgid "Active and still available for viewing."
 msgstr "Активан и још увек доступан за гледање."
-
-#: ../../../app/views/file_pushes/audit.html.erb:93
-#: ../../../app/views/passwords/audit.html.erb:93
-#: ../../../app/views/urls/audit.html.erb:80
-msgid "Successful Views"
-msgstr "Суццессфул Виевс"
-
-#: ../../../app/views/file_pushes/audit.html.erb:94
-#: ../../../app/views/urls/audit.html.erb:81
-msgid "The number of times this push has been viewed before expiration."
-msgstr ""
-
-#: ../../../app/views/file_pushes/audit.html.erb:99
-#: ../../../app/views/passwords/audit.html.erb:99
-#: ../../../app/views/urls/audit.html.erb:86
-msgid "Failed View Attempts"
-msgstr "Неуспели покушаји прегледа"
-
-#: ../../../app/views/file_pushes/audit.html.erb:100
-#: ../../../app/views/urls/audit.html.erb:87
-msgid "The number of times this push has been viewed after expiration."
-msgstr ""
-
-#: ../../../app/views/file_pushes/audit.html.erb:105
-#: ../../../app/views/passwords/audit.html.erb:105
-#: ../../../app/views/urls/audit.html.erb:92
-msgid "Days Remaining"
-msgstr "Преостали дана"
 
 #: ../../../app/views/file_pushes/audit.html.erb:106
 #: ../../../app/views/passwords/audit.html.erb:106
 #: ../../../app/views/urls/audit.html.erb:93
+msgid "Successful Views"
+msgstr "Суццессфул Виевс"
+
+#: ../../../app/views/file_pushes/audit.html.erb:107
+#: ../../../app/views/urls/audit.html.erb:94
+msgid "The number of times this push has been viewed before expiration."
+msgstr "Колико је пута овај пусх прегледан пре истека."
+
+#: ../../../app/views/file_pushes/audit.html.erb:112
+#: ../../../app/views/passwords/audit.html.erb:112
+#: ../../../app/views/urls/audit.html.erb:99
+msgid "Failed View Attempts"
+msgstr "Неуспели покушаји прегледа"
+
+#: ../../../app/views/file_pushes/audit.html.erb:113
+#: ../../../app/views/urls/audit.html.erb:100
+msgid "The number of times this push has been viewed after expiration."
+msgstr "Колико је пута овај пусх прегледан након истека."
+
+#: ../../../app/views/file_pushes/audit.html.erb:118
+#: ../../../app/views/passwords/audit.html.erb:118
+#: ../../../app/views/urls/audit.html.erb:105
+msgid "Days Remaining"
+msgstr "Преостали дана"
+
+#: ../../../app/views/file_pushes/audit.html.erb:119
+#: ../../../app/views/passwords/audit.html.erb:119
+#: ../../../app/views/urls/audit.html.erb:106
 msgid ""
 "Number of days until this push expires if the maximum view count isn't reached"
 "."
 msgstr "Број дана до истека овог притиска ако се не достигне максимални број прегледа."
 
-#: ../../../app/views/file_pushes/audit.html.erb:115
+#: ../../../app/views/file_pushes/audit.html.erb:128
 msgid "Payload"
-msgstr ""
+msgstr "Носивост"
 
-#: ../../../app/views/file_pushes/audit.html.erb:119
+#: ../../../app/views/file_pushes/audit.html.erb:132
 msgid "Contains Message for Receiver"
-msgstr ""
+msgstr "Садржи поруку за примаоца"
 
-#: ../../../app/views/file_pushes/audit.html.erb:122
-#: ../../../app/views/file_pushes/audit.html.erb:137
+#: ../../../app/views/file_pushes/audit.html.erb:135
+#: ../../../app/views/file_pushes/audit.html.erb:150
 msgid "Deleted"
-msgstr ""
+msgstr "Избрисан"
 
-#: ../../../app/views/file_pushes/audit.html.erb:124
-msgid "No"
-msgstr ""
-
-#: ../../../app/views/file_pushes/audit.html.erb:126
-msgid "Yes"
-msgstr ""
-
-#: ../../../app/views/file_pushes/audit.html.erb:129
+#: ../../../app/views/file_pushes/audit.html.erb:142
 msgid "Has a text payload been added to this push?"
-msgstr ""
+msgstr "Да ли је овом пусх-у додат текстуални садржај?"
 
-#: ../../../app/views/file_pushes/audit.html.erb:134
+#: ../../../app/views/file_pushes/audit.html.erb:147
 msgid "Message Length"
-msgstr ""
+msgstr "Дужина поруке"
 
-#: ../../../app/views/file_pushes/audit.html.erb:139
+#: ../../../app/views/file_pushes/audit.html.erb:152
 msgid "Not Applicable"
-msgstr ""
-
-#: ../../../app/views/file_pushes/audit.html.erb:144
-msgid "The length of the attached text payload."
-msgstr ""
-
-#: ../../../app/views/file_pushes/audit.html.erb:149
-msgid "Number of Files Attached"
-msgstr ""
+msgstr "Није применљиво"
 
 #: ../../../app/views/file_pushes/audit.html.erb:157
+msgid "The length of the attached text payload."
+msgstr "Дужина корисног оптерећења приложеног текста."
+
+#: ../../../app/views/file_pushes/audit.html.erb:162
+msgid "Number of Files Attached"
+msgstr "Број приложених датотека"
+
+#: ../../../app/views/file_pushes/audit.html.erb:170
 msgid "The number of files attached to this push. This value will be 0 when expired."
-msgstr ""
-
-#: ../../../app/views/file_pushes/audit.html.erb:163
-msgid "Attached Files"
-msgstr ""
-
-#: ../../../app/views/file_pushes/audit.html.erb:169
-msgid "Filename:"
-msgstr ""
-
-#: ../../../app/views/file_pushes/audit.html.erb:171
-msgid "Size: "
-msgstr ""
+msgstr "Број датотека приложених овом пусх. Ова вредност ће бити 0 када истекне."
 
 #: ../../../app/views/file_pushes/audit.html.erb:176
+msgid "Attached Files"
+msgstr "Приложене датотеке"
+
+#: ../../../app/views/file_pushes/audit.html.erb:182
+msgid "Filename:"
+msgstr "Назив документа:"
+
+#: ../../../app/views/file_pushes/audit.html.erb:184
+msgid "Size: "
+msgstr "Величина:"
+
+#: ../../../app/views/file_pushes/audit.html.erb:189
 msgid "All attached files have been deleted."
-msgstr ""
-
-#: ../../../app/views/file_pushes/audit.html.erb:187
-#: ../../../app/views/passwords/audit.html.erb:118
-#: ../../../app/views/urls/audit.html.erb:105
-msgid "Expire Now"
-msgstr "Истек одмах"
-
-#: ../../../app/views/file_pushes/audit.html.erb:195
-#: ../../../app/views/passwords/audit.html.erb:126
-msgid "Delete This Password?"
-msgstr "Избрисати ову лозинку?"
-
-#: ../../../app/views/file_pushes/audit.html.erb:199
-#: ../../../app/views/passwords/audit.html.erb:130
-#: ../../../app/views/urls/audit.html.erb:117
-msgid "This will expire this secret link and"
-msgstr "Ово ће истећи ову тајну везу и"
-
-#: ../../../app/views/file_pushes/audit.html.erb:199
-#: ../../../app/views/passwords/audit.html.erb:130
-#: ../../../app/views/urls/audit.html.erb:117
-msgid "remove all content from the database forever"
-msgstr ""
+msgstr "Све приложене датотеке су избрисане."
 
 #: ../../../app/views/file_pushes/audit.html.erb:200
 #: ../../../app/views/passwords/audit.html.erb:131
 #: ../../../app/views/urls/audit.html.erb:118
+msgid "Expire Now"
+msgstr "Истек одмах"
+
+#: ../../../app/views/file_pushes/audit.html.erb:208
+#: ../../../app/views/passwords/audit.html.erb:139
+msgid "Delete This Password?"
+msgstr "Избрисати ову лозинку?"
+
+#: ../../../app/views/file_pushes/audit.html.erb:212
+#: ../../../app/views/passwords/audit.html.erb:143
+#: ../../../app/views/urls/audit.html.erb:130
+msgid "This will expire this secret link and"
+msgstr "Ово ће истећи ову тајну везу и"
+
+#: ../../../app/views/file_pushes/audit.html.erb:212
+#: ../../../app/views/passwords/audit.html.erb:143
+#: ../../../app/views/urls/audit.html.erb:130
+msgid "remove all content from the database forever"
+msgstr "заувек уклоните сав садржај из базе података"
+
+#: ../../../app/views/file_pushes/audit.html.erb:213
+#: ../../../app/views/passwords/audit.html.erb:144
+#: ../../../app/views/urls/audit.html.erb:131
 msgid ""
 "The audit log (including future attempted views) will still be maintained goin"
 "g forward."
 msgstr "Дневник ревизије (укључујући будуће покушаје прегледа) ће се и даље одржавати."
 
-#: ../../../app/views/file_pushes/audit.html.erb:205
-#: ../../../app/views/file_pushes/show.html.erb:76
-#: ../../../app/views/passwords/audit.html.erb:136
-#: ../../../app/views/passwords/show.html.erb:60
-#: ../../../app/views/urls/audit.html.erb:123
+#: ../../../app/views/file_pushes/audit.html.erb:218
+#: ../../../app/views/file_pushes/show.html.erb:78
+#: ../../../app/views/passwords/audit.html.erb:149
+#: ../../../app/views/passwords/show.html.erb:62
+#: ../../../app/views/urls/audit.html.erb:136
 msgid "Delete"
 msgstr "Избриши"
 
-#: ../../../app/views/file_pushes/audit.html.erb:217
-#: ../../../app/views/passwords/audit.html.erb:148
-#: ../../../app/views/urls/audit.html.erb:135
+#: ../../../app/views/file_pushes/audit.html.erb:230
+#: ../../../app/views/passwords/audit.html.erb:161
+#: ../../../app/views/urls/audit.html.erb:148
 msgid "Start of Audit Log"
 msgstr "Почетак дневника ревизије"
 
-#: ../../../app/views/file_pushes/audit.html.erb:220
-#: ../../../app/views/passwords/audit.html.erb:151
-#: ../../../app/views/urls/audit.html.erb:138
+#: ../../../app/views/file_pushes/audit.html.erb:233
+#: ../../../app/views/passwords/audit.html.erb:164
+#: ../../../app/views/urls/audit.html.erb:151
 msgid "Push created on"
 msgstr "Гурните креирано даље"
 
-#: ../../../app/views/file_pushes/audit.html.erb:225
-#: ../../../app/views/passwords/audit.html.erb:156
-#: ../../../app/views/urls/audit.html.erb:143
+#: ../../../app/views/file_pushes/audit.html.erb:238
+#: ../../../app/views/passwords/audit.html.erb:169
+#: ../../../app/views/urls/audit.html.erb:156
 msgid ""
 "As the push receives activity, a log of each with identifying information will"
 " show up here."
 msgstr ""
+"Како пусх прима активност, овде ће се приказати евиденција сваког са идентифик"
+"ационим информацијама."
 
-#: ../../../app/views/file_pushes/audit.html.erb:234
-#: ../../../app/views/passwords/audit.html.erb:165
+#: ../../../app/views/file_pushes/audit.html.erb:247
+#: ../../../app/views/passwords/audit.html.erb:178
 msgid "Password manually expired by user"
 msgstr "Корисник је ручно истекао лозинку"
 
-#: ../../../app/views/file_pushes/audit.html.erb:236
-#: ../../../app/views/passwords/audit.html.erb:167
-#: ../../../app/views/passwords/audit.html.erb:173
-#: ../../../app/views/urls/audit.html.erb:154
+#: ../../../app/views/file_pushes/audit.html.erb:249
+#: ../../../app/views/passwords/audit.html.erb:180
+#: ../../../app/views/passwords/audit.html.erb:186
+#: ../../../app/views/urls/audit.html.erb:167
 msgid "at IP address"
 msgstr "на ИП адреси"
 
-#: ../../../app/views/file_pushes/audit.html.erb:237
-#: ../../../app/views/file_pushes/audit.html.erb:252
-#: ../../../app/views/file_pushes/audit.html.erb:264
-#: ../../../app/views/passwords/audit.html.erb:168
-#: ../../../app/views/passwords/audit.html.erb:186
-#: ../../../app/views/passwords/audit.html.erb:198
-#: ../../../app/views/urls/audit.html.erb:168
-#: ../../../app/views/urls/audit.html.erb:180
+#: ../../../app/views/file_pushes/audit.html.erb:250
+#: ../../../app/views/file_pushes/audit.html.erb:265
+#: ../../../app/views/file_pushes/audit.html.erb:277
+#: ../../../app/views/passwords/audit.html.erb:181
+#: ../../../app/views/passwords/audit.html.erb:199
+#: ../../../app/views/passwords/audit.html.erb:211
+#: ../../../app/views/urls/audit.html.erb:181
+#: ../../../app/views/urls/audit.html.erb:193
 msgid "on"
 msgstr "на"
 
-#: ../../../app/views/file_pushes/audit.html.erb:243
-#: ../../../app/views/file_pushes/audit.html.erb:255
-#: ../../../app/views/file_pushes/audit.html.erb:267
-#: ../../../app/views/passwords/audit.html.erb:177
-#: ../../../app/views/passwords/audit.html.erb:189
-#: ../../../app/views/passwords/audit.html.erb:201
-#: ../../../app/views/urls/audit.html.erb:159
-#: ../../../app/views/urls/audit.html.erb:171
-#: ../../../app/views/urls/audit.html.erb:183
+#: ../../../app/views/file_pushes/audit.html.erb:256
+#: ../../../app/views/file_pushes/audit.html.erb:268
+#: ../../../app/views/file_pushes/audit.html.erb:280
+#: ../../../app/views/passwords/audit.html.erb:190
+#: ../../../app/views/passwords/audit.html.erb:202
+#: ../../../app/views/passwords/audit.html.erb:214
+#: ../../../app/views/urls/audit.html.erb:172
+#: ../../../app/views/urls/audit.html.erb:184
+#: ../../../app/views/urls/audit.html.erb:196
 msgid "User Agent"
 msgstr "Кориснички агент"
 
-#: ../../../app/views/file_pushes/audit.html.erb:245
-#: ../../../app/views/file_pushes/audit.html.erb:257
-#: ../../../app/views/file_pushes/audit.html.erb:269
-#: ../../../app/views/passwords/audit.html.erb:179
-#: ../../../app/views/passwords/audit.html.erb:191
-#: ../../../app/views/passwords/audit.html.erb:203
-#: ../../../app/views/urls/audit.html.erb:161
-#: ../../../app/views/urls/audit.html.erb:173
-#: ../../../app/views/urls/audit.html.erb:185
+#: ../../../app/views/file_pushes/audit.html.erb:258
+#: ../../../app/views/file_pushes/audit.html.erb:270
+#: ../../../app/views/file_pushes/audit.html.erb:282
+#: ../../../app/views/passwords/audit.html.erb:192
+#: ../../../app/views/passwords/audit.html.erb:204
+#: ../../../app/views/passwords/audit.html.erb:216
+#: ../../../app/views/urls/audit.html.erb:174
+#: ../../../app/views/urls/audit.html.erb:186
+#: ../../../app/views/urls/audit.html.erb:198
 msgid "Referrer"
 msgstr "Реферрер"
 
-#: ../../../app/views/file_pushes/audit.html.erb:250
-#: ../../../app/views/passwords/audit.html.erb:184
-#: ../../../app/views/urls/audit.html.erb:166
+#: ../../../app/views/file_pushes/audit.html.erb:263
+#: ../../../app/views/passwords/audit.html.erb:197
+#: ../../../app/views/urls/audit.html.erb:179
 msgid "Successful view from IP address"
 msgstr "Успешан преглед са ИП адресе"
 
-#: ../../../app/views/file_pushes/audit.html.erb:262
-#: ../../../app/views/passwords/audit.html.erb:196
-#: ../../../app/views/urls/audit.html.erb:178
+#: ../../../app/views/file_pushes/audit.html.erb:275
+#: ../../../app/views/passwords/audit.html.erb:209
+#: ../../../app/views/urls/audit.html.erb:191
 msgid "Failed view attempt (already expired) by"
 msgstr "Неуспели покушај прегледа (већ истекао) од"
 
-#: ../../../app/views/file_pushes/audit.html.erb:273
-#: ../../../app/views/passwords/audit.html.erb:207
-#: ../../../app/views/urls/audit.html.erb:189
+#: ../../../app/views/file_pushes/audit.html.erb:286
+#: ../../../app/views/passwords/audit.html.erb:220
+#: ../../../app/views/urls/audit.html.erb:202
 msgid "End of Audit Log"
 msgstr "Крај дневника ревизије"
 
 #: ../../../app/views/file_pushes/expired.html.erb:1
 #: ../../../app/views/file_pushes/expired.html.erb:14
 msgid "Expired File Pushes"
-msgstr ""
+msgstr "Истекла гурања датотека"
 
 #: ../../../app/views/file_pushes/expired.html.erb:7
 msgid "You currently have no expired file pushes."
-msgstr ""
+msgstr "Тренутно немате истеклих прослеђивања датотека."
 
 #: ../../../app/views/file_pushes/expired.html.erb:10
 #: ../../../app/views/passwords/expired.html.erb:11
@@ -876,116 +910,169 @@ msgstr "Гурните нешто одмах"
 #: ../../../app/views/passwords/expired.html.erb:20
 #: ../../../app/views/urls/expired.html.erb:19
 msgid "ID"
-msgstr ""
+msgstr "ИД"
 
 #: ../../../app/views/file_pushes/expired.html.erb:21
 #: ../../../app/views/passwords/expired.html.erb:22
 #: ../../../app/views/urls/expired.html.erb:21
 msgid "Expired On"
-msgstr ""
+msgstr "Истекао на"
 
 #: ../../../app/views/file_pushes/expired.html.erb:41
 #: ../../../app/views/passwords/expired.html.erb:42
 #: ../../../app/views/urls/expired.html.erb:41
 msgid "Audit Log"
-msgstr ""
+msgstr "Дневник ревизије"
 
 #: ../../../app/views/file_pushes/new.html.erb:1
 #: ../../../app/views/file_pushes/new_anonymous.html.erb:1
 msgid "Securely Send Files"
-msgstr ""
+msgstr "Безбедно слање датотека"
+
+#: ../../../app/views/file_pushes/new.html.erb:26
+msgid "Add Files..."
+msgstr "Додај датотеке..."
 
 #: ../../../app/views/file_pushes/new.html.erb:41
 msgid "You can upload up to 10 files per push."
-msgstr ""
+msgstr "Можете да отпремите до 10 датотека по притиску."
 
 #: ../../../app/views/file_pushes/new.html.erb:46
-#: ../../../app/views/passwords/new.html.erb:70
-#: ../../../app/views/urls/new.html.erb:41
+#: ../../../app/views/passwords/new.html.erb:57
+#: ../../../app/views/urls/new.html.erb:40
 msgid "Expire secret link and delete after:"
 msgstr "Истек тајне везе и брисање након:"
 
-#: ../../../app/views/file_pushes/new.html.erb:87
+#: ../../../app/views/file_pushes/new.html.erb:82
 #: ../../../app/views/file_pushes/preview.html.erb:16
-#: ../../../app/views/passwords/new.html.erb:111
+#: ../../../app/views/passwords/new.html.erb:92
 #: ../../../app/views/passwords/preview.html.erb:16
-#: ../../../app/views/urls/new.html.erb:82
+#: ../../../app/views/urls/new.html.erb:77
 #: ../../../app/views/urls/preview.html.erb:16
 msgid "(whichever comes first)"
 msgstr "(шта год дође прво)"
 
-#: ../../../app/views/file_pushes/new.html.erb:101
-#: ../../../app/views/passwords/new.html.erb:125
-#: ../../../app/views/urls/new.html.erb:96
+#: ../../../app/views/file_pushes/new.html.erb:95
+#: ../../../app/views/passwords/new.html.erb:105
+#: ../../../app/views/urls/new.html.erb:90
 msgid "Use a 1-click retrieval step"
 msgstr "Користите корак преузимања једним кликом"
 
-#: ../../../app/views/file_pushes/new.html.erb:112
-#: ../../../app/views/passwords/new.html.erb:136
+#: ../../../app/views/file_pushes/new.html.erb:106
+#: ../../../app/views/passwords/new.html.erb:116
 msgid "Allow immediate deletion"
 msgstr "Дозволите тренутно брисање"
 
-#: ../../../app/views/file_pushes/new.html.erb:113
-#: ../../../app/views/passwords/new.html.erb:137
-msgid "Allow users to delete passwords once retrieved."
-msgstr "Дозволите корисницима да избришу лозинке када их преузму."
+#: ../../../app/views/file_pushes/new.html.erb:107
+#: ../../../app/views/passwords/new.html.erb:117
+msgid "Allow users to delete this push once retrieved."
+msgstr "Дозволите корисницима да избришу овај пусх када се преузме."
 
-#: ../../../app/views/file_pushes/new.html.erb:126
-msgid "Encrypted and visible to the receiving party."
+#: ../../../app/views/file_pushes/new.html.erb:120
+#: ../../../app/views/passwords/new.html.erb:130
+#: ../../../app/views/urls/new.html.erb:104
+msgid "Optional: Require recipients to enter a passphrase to view this push"
 msgstr ""
+"Опционо: Захтевајте од прималаца да унесу приступну фразу да би видели овај пу"
+"сх"
 
-#: ../../../app/views/file_pushes/new.html.erb:134
-#: ../../../app/views/passwords/new.html.erb:63
-#: ../../../app/views/urls/new.html.erb:110
-msgid "Encrypted and visible only to you."
-msgstr ""
+#: ../../../app/views/file_pushes/new.html.erb:128
+msgid "Message"
+msgstr "Порука"
 
-#: ../../../app/views/file_pushes/new.html.erb:139
+#: ../../../app/views/file_pushes/new.html.erb:131
+msgid "Optional: A message to be included with the push"
+msgstr "Опционо: Порука која ће бити укључена уз пусх"
+
+#: ../../../app/views/file_pushes/new.html.erb:135
+msgid "Encrypted and visible to the receiving party"
+msgstr "Шифровано и видљиво страни која прима"
+
+#: ../../../app/views/file_pushes/new.html.erb:142
+#: ../../../app/views/passwords/new.html.erb:165
+#: ../../../app/views/urls/new.html.erb:115
+msgid "Optional"
+msgstr "Опционо"
+
+#: ../../../app/views/file_pushes/new.html.erb:145
+#: ../../../app/views/passwords/new.html.erb:168
+#: ../../../app/views/urls/new.html.erb:118
+msgid "Encrypted and visible only to you"
+msgstr "Шифровано и видљиво само вама"
+
+#: ../../../app/views/file_pushes/new.html.erb:150
 msgid ""
 "Once expired, all files and content of the push will be deleted immediately an"
 "d entirely."
 msgstr ""
+"Када истекне, све датотеке и садржај пусх ће бити избрисани одмах и у потпунос"
+"ти."
 
-#: ../../../app/views/file_pushes/new.html.erb:144
-#: ../../../app/views/urls/new.html.erb:121
-msgid "An audit log of activity will be available."
-msgstr ""
-
-#: ../../../app/views/file_pushes/new.html.erb:152
-#: ../../../app/views/passwords/new.html.erb:176
+#: ../../../app/views/file_pushes/new.html.erb:155
 #: ../../../app/views/urls/new.html.erb:129
+msgid "An audit log of activity will be available."
+msgstr "Ревизорски дневник активности ће бити доступан."
+
+#: ../../../app/views/file_pushes/new.html.erb:163
+#: ../../../app/views/passwords/new.html.erb:181
+#: ../../../app/views/urls/new.html.erb:137
 msgid "Push It!"
 msgstr "Гурни га!"
 
 #: ../../../app/views/file_pushes/new_anonymous.html.erb:9
 msgid "Securely Send Files That Delete Automatically"
-msgstr ""
+msgstr "Безбедно пошаљите датотеке које се аутоматски бришу"
 
 #: ../../../app/views/file_pushes/new_anonymous.html.erb:13
 #: ../../../app/views/urls/new_anonymous.html.erb:13
 msgid "Please login to use this feature."
-msgstr ""
+msgstr "Молимо пријавите се да бисте користили ову функцију."
 
 #: ../../../app/views/file_pushes/new_anonymous.html.erb:17
 #: ../../../app/views/urls/new_anonymous.html.erb:17
 msgid "Please login or sign up to use this feature."
-msgstr ""
+msgstr "Пријавите се или региструјте да бисте користили ову функцију."
+
+#: ../../../app/views/file_pushes/passphrase.html.erb:1
+#: ../../../app/views/passwords/passphrase.html.erb:1
+#: ../../../app/views/urls/passphrase.html.erb:1
+msgid "Enter The Secret Passphrase"
+msgstr "Унесите тајну приступну фразу"
+
+#: ../../../app/views/file_pushes/passphrase.html.erb:10
+#: ../../../app/views/passwords/passphrase.html.erb:10
+#: ../../../app/views/urls/passphrase.html.erb:10
+msgid "Enter the secret passphrase provided with this URL"
+msgstr "Унесите тајну приступну фразу коју сте добили уз овај УРЛ"
+
+#: ../../../app/views/file_pushes/passphrase.html.erb:10
+#: ../../../app/views/passwords/passphrase.html.erb:10
+#: ../../../app/views/urls/passphrase.html.erb:10
+msgid "Enter the secret passphrase"
+msgstr "Унесите тајну приступну фразу"
+
+#: ../../../app/views/file_pushes/passphrase.html.erb:11
+#: ../../../app/views/passwords/passphrase.html.erb:11
+#: ../../../app/views/urls/passphrase.html.erb:11
+msgid "Go"
+msgstr "Иди"
 
 #: ../../../app/views/file_pushes/preliminary.html.erb:3
 #: ../../../app/views/passwords/preliminary.html.erb:3
 #: ../../../app/views/urls/preliminary.html.erb:3
 msgid "Click Here to Proceed"
-msgstr ""
+msgstr "Кликните овде да бисте наставили"
 
 #: ../../../app/views/file_pushes/preview.html.erb:1
 #: ../../../app/views/urls/preview.html.erb:1
 msgid "Your Push Has Been Created"
-msgstr ""
+msgstr "Ваш Пусх је креиран"
 
 #: ../../../app/views/file_pushes/preview.html.erb:6
+#: ../../../app/views/passwords/preview.html.erb:6
 #: ../../../app/views/urls/preview.html.erb:6
 msgid "Your push has been created."
-msgstr ""
+msgstr "Ваш притисак је створен."
 
 #: ../../../app/views/file_pushes/preview.html.erb:8
 #: ../../../app/views/passwords/preview.html.erb:8
@@ -996,12 +1083,12 @@ msgstr "Користите ову тајну везу да бисте је по�
 #: ../../../app/views/file_pushes/preview.html.erb:12
 #: ../../../app/views/urls/preview.html.erb:12
 msgid "This push will expire after"
-msgstr ""
+msgstr "Овај притисак ће истећи након"
 
 #: ../../../app/views/file_pushes/preview.html.erb:13
-#: ../../../app/views/file_pushes/show.html.erb:41
+#: ../../../app/views/file_pushes/show.html.erb:43
 #: ../../../app/views/passwords/preview.html.erb:13
-#: ../../../app/views/passwords/show.html.erb:22
+#: ../../../app/views/passwords/show.html.erb:24
 #: ../../../app/views/urls/preview.html.erb:13
 msgid "day"
 msgid_plural "days"
@@ -1010,13 +1097,13 @@ msgstr[1] "дана"
 msgstr[2] "дана"
 
 #: ../../../app/views/file_pushes/preview.html.erb:14
-#: ../../../app/views/file_pushes/show.html.erb:44
-#: ../../../app/views/file_pushes/show.html.erb:47
-#: ../../../app/views/pages/about.html.erb:28
+#: ../../../app/views/file_pushes/show.html.erb:46
+#: ../../../app/views/file_pushes/show.html.erb:49
 #: ../../../app/views/pages/about.html.erb:34
+#: ../../../app/views/pages/about.html.erb:40
 #: ../../../app/views/passwords/preview.html.erb:14
-#: ../../../app/views/passwords/show.html.erb:25
-#: ../../../app/views/passwords/show.html.erb:28
+#: ../../../app/views/passwords/show.html.erb:27
+#: ../../../app/views/passwords/show.html.erb:30
 #: ../../../app/views/urls/preview.html.erb:14
 msgid "or"
 msgstr "или"
@@ -1032,7 +1119,8 @@ msgstr[2] "погледа"
 
 #: ../../../app/views/file_pushes/preview.html.erb:19
 #: ../../../app/views/file_pushes/preview.html.erb:21
-#: ../../../app/views/pages/about.html.erb:66
+#: ../../../app/views/pages/about.html.erb:72
+#: ../../../app/views/pages/about.html.erb:95
 #: ../../../app/views/pages/faq.html.erb:73
 #: ../../../app/views/pages/faq.html.erb:142
 #: ../../../app/views/passwords/preview.html.erb:19
@@ -1072,7 +1160,7 @@ msgstr "Прелиминарни корак преузимања једним к
 #: ../../../app/views/file_pushes/preview.html.erb:30
 #: ../../../app/views/urls/preview.html.erb:24
 msgid "View This Push Now"
-msgstr ""
+msgstr "Погледајте овај Пусх сада"
 
 #: ../../../app/views/file_pushes/preview.html.erb:30
 #: ../../../app/views/passwords/preview.html.erb:30
@@ -1083,7 +1171,7 @@ msgstr "(сагореће поглед) или"
 #: ../../../app/views/file_pushes/preview.html.erb:31
 #: ../../../app/views/urls/preview.html.erb:25
 msgid "Push Another"
-msgstr ""
+msgstr "Гурни другог"
 
 #: ../../../app/views/file_pushes/preview.html.erb:36
 #: ../../../app/views/passwords/preview.html.erb:36
@@ -1108,67 +1196,67 @@ msgstr "Ваша тајна веза"
 
 #: ../../../app/views/file_pushes/show.html.erb:7
 msgid "The following files have been sent to you."
-msgstr ""
+msgstr "Следеће датотеке су вам послате."
 
 #: ../../../app/views/file_pushes/show.html.erb:8
 msgid "Please download and store in a secure area."
-msgstr ""
+msgstr "Преузмите и чувајте на безбедном месту."
 
 #: ../../../app/views/file_pushes/show.html.erb:13
 msgid "The following message has been sent to you along with the files below."
-msgstr ""
+msgstr "Следећа порука вам је послата заједно са датотекама испод."
 
-#: ../../../app/views/file_pushes/show.html.erb:14
+#: ../../../app/views/file_pushes/show.html.erb:15
 msgid "The message is blurred out.  Click below to reveal it."
-msgstr ""
+msgstr "Порука је замагљена. Кликните испод да бисте га открили."
 
-#: ../../../app/views/file_pushes/show.html.erb:39
-#: ../../../app/views/passwords/show.html.erb:20
+#: ../../../app/views/file_pushes/show.html.erb:41
+#: ../../../app/views/passwords/show.html.erb:22
 msgid "This secret link and all content will be deleted in"
-msgstr ""
+msgstr "Ова тајна веза и сав садржај биће избрисани"
 
-#: ../../../app/views/file_pushes/show.html.erb:44
-#: ../../../app/views/passwords/show.html.erb:25
+#: ../../../app/views/file_pushes/show.html.erb:46
+#: ../../../app/views/passwords/show.html.erb:27
 msgid "0 more views"
 msgstr "0 више прегледа"
 
-#: ../../../app/views/file_pushes/show.html.erb:45
-#: ../../../app/views/passwords/show.html.erb:26
+#: ../../../app/views/file_pushes/show.html.erb:47
+#: ../../../app/views/passwords/show.html.erb:28
 msgid "(this is the last view)."
 msgstr "(ово је последњи поглед)."
 
-#: ../../../app/views/file_pushes/show.html.erb:48
-#: ../../../app/views/passwords/show.html.erb:29
+#: ../../../app/views/file_pushes/show.html.erb:50
+#: ../../../app/views/passwords/show.html.erb:31
 msgid "more view"
 msgid_plural "more views"
 msgstr[0] "више погледа"
 msgstr[1] "више прегледа"
 msgstr[2] "више прегледа"
 
-#: ../../../app/views/file_pushes/show.html.erb:49
-#: ../../../app/views/passwords/show.html.erb:30
+#: ../../../app/views/file_pushes/show.html.erb:51
+#: ../../../app/views/passwords/show.html.erb:32
 msgid "(whichever occurs first)."
 msgstr "(шта год се прво догоди)."
 
-#: ../../../app/views/file_pushes/show.html.erb:54
-#: ../../../app/views/passwords/show.html.erb:35
+#: ../../../app/views/file_pushes/show.html.erb:56
+#: ../../../app/views/passwords/show.html.erb:37
 msgid "Delete This Secret Link Now"
 msgstr "Избришите ову тајну везу одмах"
 
-#: ../../../app/views/file_pushes/show.html.erb:66
-#: ../../../app/views/passwords/show.html.erb:50
+#: ../../../app/views/file_pushes/show.html.erb:68
+#: ../../../app/views/passwords/show.html.erb:52
 msgid "Delete?"
-msgstr ""
+msgstr "Избрисати?"
 
-#: ../../../app/views/file_pushes/show.html.erb:70
-#: ../../../app/views/passwords/show.html.erb:54
+#: ../../../app/views/file_pushes/show.html.erb:72
+#: ../../../app/views/passwords/show.html.erb:56
 msgid "This will expire this secret link and "
 msgstr "Ово ће истећи ову тајну везу и"
 
-#: ../../../app/views/file_pushes/show.html.erb:71
-#: ../../../app/views/passwords/show.html.erb:55
+#: ../../../app/views/file_pushes/show.html.erb:73
+#: ../../../app/views/passwords/show.html.erb:57
 msgid "delete all related content from the database forever"
-msgstr ""
+msgstr "заувек избришите сав повезани садржај из базе података"
 
 #: ../../../app/views/file_pushes/show_expired.html.erb:1
 #: ../../../app/views/passwords/show_expired.html.erb:1
@@ -1192,18 +1280,7 @@ msgstr ""
 "Ако је потребно, контактирајте особу или организацију која вам је дала овај та"
 "јни УРЛ."
 
-#: ../../../app/views/layouts/application.html.erb:12
-#: ../../../app/views/layouts/bare.html.erb:12
-#: ../../../app/views/layouts/login.html.erb:12
-#: ../../../app/views/layouts/naked.html.erb:12
-msgid ""
-"Password Pusher is an application to securely send passwords over the web. Lin"
-"ks to passwords expire after a certain number of views and/or time has passed."
-msgstr ""
-"Пассворд Пусхер је апликација за безбедно слање лозинки преко веба. Везе ка ло"
-"зинкама истичу након одређеног броја прегледа и/или времена."
-
-#: ../../../app/views/layouts/login.html.erb:42
+#: ../../../app/views/layouts/login.html.erb:37
 #: ../../../app/views/shared/_footer.html.erb:12
 #: ../../../app/views/shared/_footer.html.erb:16
 #: ../../../app/views/shared/_header.html.erb:9
@@ -1211,17 +1288,19 @@ msgstr ""
 msgid "Password Pusher Logo"
 msgstr "Лого Пусхер лозинке"
 
-#: ../../../app/views/layouts/login.html.erb:57
+#: ../../../app/views/layouts/login.html.erb:52
 msgid ""
 "Some domains may inadvertently block emails.  If you are having trouble receiv"
 "ing emails, "
 msgstr ""
+"Неки домени могу нехотице блокирати е-пошту. Ако имате проблема са примањем е-"
+"порука,"
 
-#: ../../../app/views/layouts/login.html.erb:58
+#: ../../../app/views/layouts/login.html.erb:53
 msgid "send a message"
-msgstr ""
+msgstr "Пошаљи поруку"
 
-#: ../../../app/views/layouts/login.html.erb:59
+#: ../../../app/views/layouts/login.html.erb:54
 msgid "and we can help out."
 msgstr "и ми можемо помоћи."
 
@@ -1230,67 +1309,80 @@ msgid "About Password Pusher"
 msgstr "О Пассворд Пусхер-у"
 
 #: ../../../app/views/pages/about.html.erb:2
-#: ../../../app/views/shared/_footer.html.erb:48
+#: ../../../app/views/shared/_footer.html.erb:49
 msgid "About"
 msgstr "О томе"
 
 #: ../../../app/views/pages/about.html.erb:7
 msgid ""
-"Password Pusher is an application to communicate passwords over the web. Links"
-" to passwords\n"
-"            expire after a certain number of views and/or time has passed."
+"Password Pusher is a tool used for sharing passwords and other sensitive infor"
+"mation with other people securely."
 msgstr ""
-"Пассворд Пусхер је апликација за преношење лозинки преко веба. Везе ка лозинка"
-"ма истичу након одређеног броја прегледа и/или времена."
+"Пассворд Пусхер је алатка која се користи за безбедно дељење лозинки и других "
+"осетљивих информација са другим људима."
+
+#: ../../../app/views/pages/about.html.erb:10
+msgid ""
+"With Password Pusher, you can create a unique, one-time URL that will expire a"
+"fter a certain amount of time or after it has been accessed a certain number o"
+"f times, ensuring that your information remains private and secure."
+msgstr ""
+"Помоћу Пассворд Пусхер-а можете креирати јединствену, једнократну УРЛ адресу к"
+"оја ће истећи након одређеног времена или након што јој се приступи одређени б"
+"рој пута, осигуравајући да ваше информације остану приватне и безбедне."
 
 #: ../../../app/views/pages/about.html.erb:11
+msgid ""
+"It is often used by individuals and organizations to share login credentials o"
+"r other sensitive data with colleagues, clients, or partners."
+msgstr ""
+"Често га користе појединци и организације за дељење акредитива за пријаву или "
+"других осетљивих података са колегама, клијентима или партнерима."
+
+#: ../../../app/views/pages/about.html.erb:14
+msgid ""
+"Password Pusher is a simple and convenient solution for securely sharing passw"
+"ords without the need for email or other less secure communication methods."
+msgstr ""
+"Пассворд Пусхер је једноставно и практично решење за безбедно дељење лозинки б"
+"ез потребе за е-поштом или другим мање безбедним методама комуникације."
+
+#: ../../../app/views/pages/about.html.erb:17
 msgid "Hosted at"
 msgstr "Хостед ат"
 
-#: ../../../app/views/pages/about.html.erb:13
+#: ../../../app/views/pages/about.html.erb:19
 msgid "or you can run your own private instance wherever you like."
 msgstr "или можете покренути своју приватну инстанцу где год желите."
 
-#: ../../../app/views/pages/about.html.erb:17
+#: ../../../app/views/pages/about.html.erb:23
 msgid "The source code is"
 msgstr "Изворни код је"
 
-#: ../../../app/views/pages/about.html.erb:18
-#: ../../../app/views/pages/about.html.erb:35
+#: ../../../app/views/pages/about.html.erb:24
+#: ../../../app/views/pages/about.html.erb:41
 msgid "on Github"
 msgstr "на Гитхуб-у"
 
-#: ../../../app/views/pages/about.html.erb:19
+#: ../../../app/views/pages/about.html.erb:25
 msgid "It’s opensource and free for anyone to use, review or modify."
 msgstr "Отворен је код и бесплатан је за коришћење, преглед или модификовање."
 
-#: ../../../app/views/pages/about.html.erb:22
+#: ../../../app/views/pages/about.html.erb:28
 msgid "The Author"
 msgstr "Аутор"
 
-#: ../../../app/views/pages/about.html.erb:25
+#: ../../../app/views/pages/about.html.erb:31
 msgid "My name is Peter Giacomo Lombardo. You can find me on"
 msgstr "Моје име је Петер Гиацомо Ломбардо. Можете ме наћи на"
 
-#: ../../../app/views/pages/about.html.erb:32
+#: ../../../app/views/pages/about.html.erb:38
 msgid "For updates, you can"
 msgstr "За ажурирања, можете"
 
-#: ../../../app/views/pages/about.html.erb:33
+#: ../../../app/views/pages/about.html.erb:39
 msgid "follow me on Twitter"
 msgstr "Запрати ме на твитеру"
-
-#: ../../../app/views/pages/about.html.erb:38
-msgid "Contributors"
-msgstr "Сарадници"
-
-#: ../../../app/views/pages/about.html.erb:41
-msgid "Password Pusher has had a great community of contributors over the years."
-msgstr "Пассворд Пусхер је током година имао велику заједницу сарадника."
-
-#: ../../../app/views/pages/about.html.erb:42
-msgid "Take a look"
-msgstr "Погледај"
 
 #: ../../../app/views/pages/about.html.erb:44
 msgid "Want to Help Out?"
@@ -1312,40 +1404,67 @@ msgstr "Можете такође"
 msgid "Star the Github project"
 msgstr "Означите Гитхуб пројекат"
 
-#: ../../../app/views/pages/about.html.erb:59
+#: ../../../app/views/pages/about.html.erb:57
+msgid "It's gasoline for the algos that trend Password Pusher."
+msgstr "То је бензин за алге који су у тренду Пассворд Пусхер."
+
+#: ../../../app/views/pages/about.html.erb:60
 #: ../../../app/views/pages/translate.html.erb:3
 msgid "Help Translate"
 msgstr "Хелп Транслате"
 
-#: ../../../app/views/pages/about.html.erb:60
+#: ../../../app/views/pages/about.html.erb:61
 msgid "Improve an existing language or add a new one"
 msgstr "Побољшајте постојећи језик или додајте нови"
 
-#: ../../../app/views/pages/about.html.erb:63
+#: ../../../app/views/pages/about.html.erb:64
+msgid "Sign up for the"
+msgstr "Пријавите се за"
+
+#: ../../../app/views/pages/about.html.erb:65
+msgid "newsletter"
+msgstr "билтен"
+
+#: ../../../app/views/pages/about.html.erb:66
+msgid "to get updates on important releases, security issues, tips and more."
+msgstr ""
+"да добијате ажурирања о важним издањима, безбедносним проблемима, саветима и ј"
+"ош много тога."
+
+#: ../../../app/views/pages/about.html.erb:69
 msgid "Follow Password Pusher on"
 msgstr "Фоллов Пассворд Пусхер укључен"
 
-#: ../../../app/views/pages/about.html.erb:70
+#: ../../../app/views/pages/about.html.erb:76
 msgid "Fix an issue, add a feature or write some documentation."
 msgstr "Решите проблем, додајте функцију или напишите неку документацију."
 
-#: ../../../app/views/pages/about.html.erb:70
+#: ../../../app/views/pages/about.html.erb:76
 msgid "See the Github project."
 msgstr "Погледајте пројекат Гитхуб."
 
-#: ../../../app/views/pages/about.html.erb:73
+#: ../../../app/views/pages/about.html.erb:79
 msgid "Sign up to Digital Ocean"
 msgstr "Пријавите се за Дигитал Оцеан"
 
-#: ../../../app/views/pages/about.html.erb:74
+#: ../../../app/views/pages/about.html.erb:80
 msgid "with this link"
 msgstr "са овом везом"
 
-#: ../../../app/views/pages/about.html.erb:75
+#: ../../../app/views/pages/about.html.erb:81
 msgid "to get Password Pusher a hosting credit."
 msgstr "да добијете Пассворд Пусхер кредит за хостинг."
 
-#: ../../../app/views/pages/about.html.erb:80
+#: ../../../app/views/pages/about.html.erb:85
+msgid "Thank you for supporting Password Pusher!"
+msgstr "Хвала вам што подржавате Пассворд Пусхер!"
+
+#: ../../../app/views/pages/about.html.erb:87
+#: ../../../app/views/shared/_footer.html.erb:26
+msgid "Resources"
+msgstr "Ресурси"
+
+#: ../../../app/views/pages/about.html.erb:90
 msgid ""
 "If you are giving a presentation, authoring a blog post or video about Passwor"
 "d Pusher, feel free to contact me for any questions."
@@ -1353,31 +1472,43 @@ msgstr ""
 "Ако одржавате презентацију, пишете блог или видео запис о Пассворд Пусхер-у, с"
 "лободно ме контактирајте за сва питања."
 
-#: ../../../app/views/pages/about.html.erb:83
-msgid "Thank you for supporting Password Pusher!"
-msgstr "Хвала вам што подржавате Пассворд Пусхер!"
+#: ../../../app/views/pages/about.html.erb:93
+msgid "We have media resources and a full explanation of features available in"
+msgstr "Имамо медијске ресурсе и потпуно објашњење функција доступних у"
 
-#: ../../../app/views/pages/about.html.erb:91
+#: ../../../app/views/pages/about.html.erb:94
+msgid "Windows Powerpoint"
+msgstr "Виндовс Поверпоинт"
+
+#: ../../../app/views/pages/about.html.erb:96
+msgid "Mac Keynote"
+msgstr "Мац Кеиноте"
+
+#: ../../../app/views/pages/about.html.erb:97
+msgid "formats."
+msgstr "формати."
+
+#: ../../../app/views/pages/about.html.erb:106
 msgid "Birthday"
 msgstr "Рођендан"
 
-#: ../../../app/views/pages/about.html.erb:93
-msgid "More Than 10 Years Old"
-msgstr "Више од 10 година"
+#: ../../../app/views/pages/about.html.erb:108
+msgid "More Than 11 Years Old"
+msgstr "Више од 11 година"
 
-#: ../../../app/views/pages/about.html.erb:95
+#: ../../../app/views/pages/about.html.erb:110
 msgid "The first git commit to Password Pusher was on"
 msgstr "Прво гит урезивање на Пассворд Пусхер је било укључено"
 
-#: ../../../app/views/pages/about.html.erb:100
+#: ../../../app/views/pages/about.html.erb:114
 msgid "pwpush.com went live shortly thereafter."
 msgstr "pwpush.com је убрзо након тога почео са радом."
 
-#: ../../../app/views/pages/about.html.erb:106
+#: ../../../app/views/pages/about.html.erb:120
 msgid "The Original Theme"
 msgstr "Оригинална тема"
 
-#: ../../../app/views/pages/about.html.erb:107
+#: ../../../app/views/pages/about.html.erb:121
 msgid ""
 "The original site design consisted of a dark background with a bold yellow fon"
 "t."
@@ -1385,12 +1516,12 @@ msgstr ""
 "Оригинални дизајн сајта састојао се од тамне позадине са подебљаним жутим фонт"
 "ом."
 
-#: ../../../app/views/pages/about.html.erb:110
+#: ../../../app/views/pages/about.html.erb:124
 msgid "Follow for news, changes & updates."
 msgstr "Пратите вести, промене и ажурирања."
 
 #: ../../../app/views/pages/faq.html.erb:1
-#: ../../../app/views/shared/_footer.html.erb:29
+#: ../../../app/views/shared/_footer.html.erb:35
 msgid "FAQ"
 msgstr "ФАК"
 
@@ -1612,7 +1743,7 @@ msgid "The"
 msgstr "Тхе"
 
 #: ../../../app/views/pages/faq.html.erb:110
-#: ../../../app/views/shared/_footer.html.erb:30
+#: ../../../app/views/shared/_footer.html.erb:44
 msgid "Tools"
 msgstr "Алати"
 
@@ -1998,6 +2129,14 @@ msgstr ""
 "Генерисање кључева се такође може обавити из командне линије у извору апликаци"
 "је извршавањем:"
 
+#: ../../../app/views/pages/generate_key.html.erb:80
+msgid "See also the Password Pusher"
+msgstr "Видите и Пассворд Пусхер"
+
+#: ../../../app/views/pages/generate_key.html.erb:81
+msgid "Configuration documentation"
+msgstr "Конфигурациона документација"
+
 #: ../../../app/views/pages/tools.html.erb:1
 #: ../../../app/views/pages/tools.html.erb:3
 msgid "Tools & Applications"
@@ -2100,6 +2239,14 @@ msgstr ""
 "Преводи се у почетку обављају машински помоћу Гоогле преводиоца. Посао преводи"
 "лаца је да изаберу тачан превод и додају све исправке по потреби."
 
+#: ../../../app/views/pages/translate.html.erb:23
+msgid ""
+"Translations for an entirely new language can be done in less than an hour for"
+" native speakers."
+msgstr ""
+"Преводи за потпуно нови језик могу се обавити за мање од сат времена за изворн"
+"е говорнике."
+
 #: ../../../app/views/pages/translate.html.erb:27
 msgid "Read more: "
 msgstr "Опширније:"
@@ -2111,6 +2258,10 @@ msgstr "Како користити наш интерфејс за превод?
 #: ../../../app/views/pages/translate.html.erb:32
 msgid "How to Join"
 msgstr "Како се придружити"
+
+#: ../../../app/views/pages/translate.html.erb:35
+msgid "To join the translation effort:"
+msgstr "Да бисте се придружили преводитељским напорима:"
 
 #: ../../../app/views/pages/translate.html.erb:40
 msgid "Register for a free account on"
@@ -2161,19 +2312,19 @@ msgstr "Хвала вам што сте помогли да преведете �
 #: ../../../app/views/passwords/active.html.erb:1
 #: ../../../app/views/passwords/active.html.erb:18
 msgid "Active Password Pushes"
-msgstr ""
+msgstr "Ацтиве Пассворд Пусхес"
 
 #: ../../../app/views/passwords/active.html.erb:8
 msgid "You currently have no active password pushes."
-msgstr ""
+msgstr "Тренутно немате активних гурање лозинки."
 
 #: ../../../app/views/passwords/active.html.erb:13
 msgid "Push a Password Now"
-msgstr ""
+msgstr "Притисните лозинку одмах"
 
 #: ../../../app/views/passwords/audit.html.erb:4
 msgid "Audit Log for Password Push"
-msgstr ""
+msgstr "Дневник ревизије за Пусх лозинке"
 
 #: ../../../app/views/passwords/audit.html.erb:36
 msgid "Password expires after this number of views."
@@ -2187,58 +2338,62 @@ msgstr "Лозинка истиче након овог броја дана."
 msgid "This allows end users to delete passwords once retrieved."
 msgstr "Ово омогућава крајњим корисницима да избришу лозинке када се преузму."
 
-#: ../../../app/views/passwords/audit.html.erb:94
+#: ../../../app/views/passwords/audit.html.erb:107
 msgid "The number of times this password has been viewed before expiration."
 msgstr "Колико пута је ова лозинка прегледана пре истека."
 
-#: ../../../app/views/passwords/audit.html.erb:100
+#: ../../../app/views/passwords/audit.html.erb:113
 msgid "The number of times this password has been viewed after expiration."
 msgstr "Колико пута је ова лозинка прегледана након истека."
 
-#: ../../../app/views/passwords/audit.html.erb:171
+#: ../../../app/views/passwords/audit.html.erb:184
 msgid "Password manually expired by an anonymous user"
-msgstr ""
+msgstr "Лозинка је ручно истекла од анонимног корисника"
 
 #: ../../../app/views/passwords/expired.html.erb:1
 #: ../../../app/views/passwords/expired.html.erb:15
 msgid "Expired Password Pushes"
-msgstr ""
+msgstr "Истекла лозинка"
 
 #: ../../../app/views/passwords/expired.html.erb:8
 msgid "You currently have no expired password pushes."
-msgstr ""
+msgstr "Тренутно немате ниједну истеклу лозинку."
 
 #: ../../../app/views/passwords/new.html.erb:1
 msgid "Securely Send a Password"
 msgstr "Безбедно пошаљите лозинку"
 
 #: ../../../app/views/passwords/new.html.erb:13
-#: ../../../app/views/passwords/new.html.erb:168
+#: ../../../app/views/passwords/new.html.erb:138
 #: ../../../app/views/shared/_pw_generator_modal.html.erb:72
 msgid "Save"
 msgstr "сачувати"
 
 #: ../../../app/views/passwords/new.html.erb:14
 msgid "Saved!"
-msgstr ""
+msgstr "Сачувано!"
 
 #: ../../../app/views/passwords/new.html.erb:37
-msgid "Enter the Password (or text) to be Shared"
-msgstr "Унесите лозинку (или текст) за дељење"
+msgid "Enter the Password or Text to push.."
+msgstr "Унесите лозинку или текст да притиснете.."
 
 #: ../../../app/views/passwords/new.html.erb:49
 msgid "Characters"
 msgstr "ликови"
 
-#: ../../../app/views/passwords/new.html.erb:151
+#: ../../../app/views/passwords/new.html.erb:138
+msgid "the above settings as the page default."
+msgstr "горња подешавања као подразумевана страница."
+
+#: ../../../app/views/passwords/new.html.erb:150
 msgid "Generate Password"
 msgstr "Генеришите лозинку"
 
-#: ../../../app/views/passwords/new.html.erb:159
+#: ../../../app/views/passwords/new.html.erb:157
 msgid "Use the button above to generate a random password."
 msgstr "Користите горње дугме да бисте генерисали случајну лозинку."
 
-#: ../../../app/views/passwords/new.html.erb:160
+#: ../../../app/views/passwords/new.html.erb:173
 msgid ""
 "Tip: Only enter a password into the box.  Other identifying information can co"
 "mpromise security."
@@ -2246,7 +2401,7 @@ msgstr ""
 "Савет: Унесите само лозинку у поље. Друге идентификационе информације могу угр"
 "озити безбедност."
 
-#: ../../../app/views/passwords/new.html.erb:161
+#: ../../../app/views/passwords/new.html.erb:174
 msgid ""
 "All passwords are encrypted prior to storage and are available to only those w"
 "ith the secret link.  Once expired, encrypted passwords are unequivocally dele"
@@ -2255,17 +2410,9 @@ msgstr ""
 "Све лозинке су шифроване пре складиштења и доступне су само онима са тајном ве"
 "зом. Када истекне, шифроване лозинке се недвосмислено бришу из базе података."
 
-#: ../../../app/views/passwords/new.html.erb:168
-msgid "the above settings as the page default."
-msgstr "горња подешавања као подразумевана страница."
-
 #: ../../../app/views/passwords/preview.html.erb:1
 msgid "Your Password has been Pushed"
 msgstr "Ваша лозинка је гурнута"
-
-#: ../../../app/views/passwords/preview.html.erb:6
-msgid "Your password has been pushed."
-msgstr "Ваша лозинка је гурнута."
 
 #: ../../../app/views/passwords/preview.html.erb:12
 msgid "This newly pushed password will expire after"
@@ -2284,35 +2431,38 @@ msgid ""
 "Please obtain and securely store this content in a secure manner, such as in a"
 " password manager."
 msgstr ""
+"Набавите и безбедно сачувајте овај садржај на безбедан начин, као што је менаџ"
+"ер лозинки."
 
-#: ../../../app/views/passwords/show.html.erb:8
+#: ../../../app/views/passwords/show.html.erb:9
 msgid "Your password is blurred out.  Click below to reveal it."
 msgstr "Ваша лозинка је замагљена. Кликните испод да бисте га открили."
+
+#: ../../../app/views/shared/_dashboard_header.html.erb:3
+#: ../../../app/views/shared/_header.html.erb:30
+msgid "Dashboard"
+msgstr "Командна табла"
 
 #: ../../../app/views/shared/_dashboard_header.html.erb:10
 #: ../../../app/views/shared/_topnav.html.erb:4
 msgid "Passwords"
-msgstr ""
+msgstr "Лозинке"
 
 #: ../../../app/views/shared/_dashboard_header.html.erb:14
 #: ../../../app/views/shared/_topnav.html.erb:8
 msgid "Files"
-msgstr ""
+msgstr "Фајлови"
 
 #: ../../../app/views/shared/_dashboard_header.html.erb:19
 #: ../../../app/views/shared/_topnav.html.erb:13
 msgid "URLs"
-msgstr ""
+msgstr "УРЛ адресе"
 
 #: ../../../app/views/shared/_dashboard_header.html.erb:36
 #: ../../../app/views/shared/_dashboard_header.html.erb:38
 #: ../../../app/views/shared/_dashboard_header.html.erb:40
 msgid "New"
-msgstr ""
-
-#: ../../../app/views/shared/_email_footer.html.erb:4
-msgid "Your Friendly Neighborhood"
-msgstr "Ваше пријатељско суседство"
+msgstr "Нова"
 
 #: ../../../app/views/shared/_footer.html.erb:5
 msgid "Peter"
@@ -2322,79 +2472,73 @@ msgstr "Петар"
 msgid "Front Page"
 msgstr "Насловна страна"
 
-#: ../../../app/views/shared/_footer.html.erb:26
-msgid "Resources"
-msgstr "Ресурси"
-
-#: ../../../app/views/shared/_footer.html.erb:33
-msgid "Source Code"
-msgstr "Изворни код"
-
-#: ../../../app/views/shared/_footer.html.erb:39
+#: ../../../app/views/shared/_footer.html.erb:31
 msgid "Docker Containers"
 msgstr "Доцкер контејнери"
 
-#: ../../../app/views/shared/_footer.html.erb:43
+#: ../../../app/views/shared/_footer.html.erb:36
+msgid "JSON API"
+msgstr "ЈСОН АПИ"
+
+#: ../../../app/views/shared/_footer.html.erb:37
 msgid "Key Generator"
 msgstr "Кеи Генератор"
 
-#: ../../../app/views/shared/_footer.html.erb:51
+#: ../../../app/views/shared/_footer.html.erb:40
+msgid "Source Code"
+msgstr "Изворни код"
+
+#: ../../../app/views/shared/_footer.html.erb:52
 msgid "Overview"
 msgstr "Преглед"
 
-#: ../../../app/views/shared/_footer.html.erb:52
+#: ../../../app/views/shared/_footer.html.erb:53
 msgid "Help Translate!"
 msgstr "Хелп Транслате!"
 
-#: ../../../app/views/shared/_header.html.erb:27
-msgid "Go Ahead.  Email Another Password."
-msgstr "Хајде. Пошаљите другу лозинку."
-
-#: ../../../app/views/shared/_header.html.erb:38
-msgid "Dashboard"
-msgstr "Командна табла"
-
-#: ../../../app/views/shared/_header.html.erb:45
+#: ../../../app/views/shared/_header.html.erb:37
 msgid "Account"
 msgstr "Рачун"
 
-#: ../../../app/views/shared/_header.html.erb:49
+#: ../../../app/views/shared/_header.html.erb:41
 msgid "Edit Login Details"
 msgstr "Уредите детаље за пријаву"
 
-#: ../../../app/views/shared/_header.html.erb:55
+#: ../../../app/views/shared/_header.html.erb:47
 msgid "Log Out"
 msgstr "Одјавити се"
 
-#: ../../../app/views/shared/_header.html.erb:61
+#: ../../../app/views/shared/_header.html.erb:53
 msgid "Log In"
 msgstr "Пријавите се"
 
-#: ../../../app/views/shared/_header.html.erb:65
+#: ../../../app/views/shared/_header.html.erb:57
 msgid "Sign Up"
 msgstr "Пријави се"
 
-#: ../../../app/views/shared/_header.html.erb:84
+#: ../../../app/views/shared/_header.html.erb:76
 msgid "Select your language"
 msgstr "Одаберите језик"
 
 #: ../../../app/views/shared/_newsletter_sign_up.html.erb:3
 msgid "Get The Newsletter"
-msgstr ""
+msgstr "Набавите билтен"
 
 #: ../../../app/views/shared/_newsletter_sign_up.html.erb:5
 msgid ""
 "Updates on big releases, security issues, features, integrations, tips and mor"
 "e."
 msgstr ""
+"Ажурирања о великим издањима, безбедносним проблемима, функцијама, интеграција"
+"ма, саветима и још много тога."
 
 #: ../../../app/views/shared/_newsletter_sign_up.html.erb:14
 msgid "Enter your email..."
-msgstr ""
+msgstr "Унесите емаил..."
 
 #: ../../../app/views/shared/_newsletter_sign_up.html.erb:15
 msgid "Subscribe"
-msgstr ""
+msgstr "претплатити се"
 
 #: ../../../app/views/shared/_pw_generator_modal.html.erb:5
 msgid "Configure Password Generation"
@@ -2450,71 +2594,73 @@ msgstr "Ресетуј до почетног"
 
 #: ../../../app/views/shared/_secret_url_bar.html.erb:13
 msgid "Secret Link Language"
-msgstr ""
+msgstr "Језик тајне везе"
 
 #: ../../../app/views/urls/active.html.erb:1
 #: ../../../app/views/urls/active.html.erb:18
 msgid "Active URL Pushes"
-msgstr ""
+msgstr "Активни УРЛ гура"
 
 #: ../../../app/views/urls/active.html.erb:8
 msgid "You currently have no active URL pushes."
-msgstr ""
+msgstr "Тренутно немате активних гурања УРЛ-а."
 
 #: ../../../app/views/urls/active.html.erb:13
 #: ../../../app/views/urls/expired.html.erb:10
 msgid "Push a URL Now"
-msgstr ""
+msgstr "Гурните УРЛ одмах"
 
 #: ../../../app/views/urls/audit.html.erb:4
 msgid "Audit Log for URL Push"
-msgstr ""
+msgstr "Дневник ревизије за УРЛ Пусх"
 
-#: ../../../app/views/urls/audit.html.erb:113
+#: ../../../app/views/urls/audit.html.erb:126
 msgid "Delete This URL Push?"
-msgstr ""
+msgstr "Избрисати ову УРЛ адресу Пусх?"
 
-#: ../../../app/views/urls/audit.html.erb:152
+#: ../../../app/views/urls/audit.html.erb:165
 msgid "URL Push manually expired by user"
-msgstr ""
+msgstr "УРЛ Пусх је ручно истекао од стране корисника"
 
 #: ../../../app/views/urls/expired.html.erb:1
 #: ../../../app/views/urls/expired.html.erb:14
 msgid "Expired URL Pushes"
-msgstr ""
+msgstr "Истекла УРЛ адреса"
 
 #: ../../../app/views/urls/expired.html.erb:7
 msgid "You currently have no expired URL pushes."
-msgstr ""
+msgstr "Тренутно немате истеклих УРЛ-ова."
 
 #: ../../../app/views/urls/new.html.erb:1
 msgid "Securely Send URLs"
-msgstr ""
+msgstr "Безбедно слање УРЛ-ова"
+
+#: ../../../app/views/urls/new.html.erb:25
+msgid "URL Redirection"
+msgstr "УРЛ преусмеравање"
 
 #: ../../../app/views/urls/new.html.erb:29
 msgid "Enter the URL to redirect to..."
-msgstr ""
+msgstr "Унесите УРЛ адресу за преусмеравање на..."
 
-#: ../../../app/views/urls/new.html.erb:36
-msgid "Specify a URL to redirect to."
-msgstr ""
-
-#: ../../../app/views/urls/new.html.erb:97
+#: ../../../app/views/urls/new.html.erb:91
 msgid "Helps to avoid chat systems and URL scanners from eating up redirects."
 msgstr ""
+"Помаже да се избегне да системи за ћаскање и скенери УРЛ-а не поједу преусмера"
+"вања."
 
-#: ../../../app/views/urls/new.html.erb:115
+#: ../../../app/views/urls/new.html.erb:123
 msgid "A secret URL will be generated that will redirect to the URL specified."
-msgstr ""
+msgstr "Биће генерисана тајна УРЛ адреса која ће преусмерити на наведену УРЛ адресу."
 
-#: ../../../app/views/urls/new.html.erb:120
-msgid "Upon expiration, the push redirect will be deleted entirely."
-msgstr ""
+#: ../../../app/views/urls/new.html.erb:128
+msgid "Upon expiration, the push URL will be deleted entirely."
+msgstr "По истеку, пусх УРЛ ће бити у потпуности избрисан."
 
 #: ../../../app/views/urls/new_anonymous.html.erb:1
 msgid "Securely Share URLs"
-msgstr ""
+msgstr "Безбедно делите УРЛ-ове"
 
 #: ../../../app/views/urls/new_anonymous.html.erb:9
 msgid "Securely Send URLs That Expire Automatically"
-msgstr ""
+msgstr "Безбедно пошаљите УРЛ-ове који аутоматски истичу"
