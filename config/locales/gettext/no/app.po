@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PasswordPusher 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2023-05-19 16:33+0200\n"
-"PO-Revision-Date: 2023-05-19 16:33+0200\n"
+"POT-Creation-Date: 2023-10-10 09:42+0200\n"
+"PO-Revision-Date: 2023-10-10 09:43+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Norwegian\n"
 "Language: no\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Not Found"
 msgstr "ikke funnet"
 
-#: ../../../app/controllers/feedbacks_controller.rb:10
+#: ../../../app/controllers/feedbacks_controller.rb:12
 msgid ""
 "Our apologies but you failed the spam check.  You could try contacting us on G"
 "ithub instead."
@@ -30,11 +30,11 @@ msgstr ""
 "Vi beklager, men du mislyktes i spam-kontrollen. Du kan prøve å kontakte oss p"
 "å Github i stedet."
 
-#: ../../../app/controllers/feedbacks_controller.rb:15
-msgid "Feedback sent!"
-msgstr "Tilbakemelding sendt!"
-
 #: ../../../app/controllers/feedbacks_controller.rb:17
+msgid "Feedback sent!  We will get back to you as soon as possible."
+msgstr "Tilbakemelding sendt! Vi vil komme tilbake til deg så snart som mulig."
+
+#: ../../../app/controllers/feedbacks_controller.rb:19
 msgid ""
 "Could not send feedback.  Did you pass the Humanity Test?  Valid email?  Try a"
 "gain?"
@@ -52,7 +52,7 @@ msgstr ""
 "Passordet er feil. Vennligst prøv igjen eller kontakt personen eller organisas"
 "jonen som sendte deg denne linken."
 
-#: ../../../app/controllers/file_pushes_controller.rb:221
+#: ../../../app/controllers/file_pushes_controller.rb:224
 msgid ""
 "Only 10 active file pushes allowed while in Beta and until things are stable. "
 "If it's an option, you can manually expire existing pushes before creating new"
@@ -62,26 +62,26 @@ msgstr ""
 " det er et alternativ, kan du manuelt utløpe eksisterende push før du opprette"
 "r nye."
 
-#: ../../../app/controllers/file_pushes_controller.rb:315
+#: ../../../app/controllers/file_pushes_controller.rb:317
 #: ../../../app/controllers/passwords_controller.rb:297
 #: ../../../app/controllers/urls_controller.rb:290
 msgid "That push doesn't belong to you."
 msgstr "Det pushet tilhører ikke deg."
 
-#: ../../../app/controllers/file_pushes_controller.rb:345
+#: ../../../app/controllers/file_pushes_controller.rb:347
 #: ../../../app/controllers/passwords_controller.rb:327
 #: ../../../app/controllers/urls_controller.rb:320
 #: ../../../app/controllers/urls_controller.rb:324
 msgid "That push does not belong to you."
 msgstr "Det pushet tilhører ikke deg."
 
-#: ../../../app/controllers/file_pushes_controller.rb:350
+#: ../../../app/controllers/file_pushes_controller.rb:352
 #: ../../../app/controllers/passwords_controller.rb:332
 msgid "That push is not deletable by viewers."
 msgstr "Den push kan ikke slettes av seerne."
 
-#: ../../../app/controllers/file_pushes_controller.rb:356
-#: ../../../app/controllers/file_pushes_controller.rb:357
+#: ../../../app/controllers/file_pushes_controller.rb:358
+#: ../../../app/controllers/file_pushes_controller.rb:359
 #: ../../../app/controllers/passwords_controller.rb:338
 #: ../../../app/controllers/passwords_controller.rb:339
 #: ../../../app/controllers/urls_controller.rb:330
@@ -89,8 +89,8 @@ msgstr "Den push kan ikke slettes av seerne."
 msgid "That push is already expired."
 msgstr "Den push-en er allerede utløpt."
 
-#: ../../../app/controllers/file_pushes_controller.rb:375
-#: ../../../app/controllers/file_pushes_controller.rb:378
+#: ../../../app/controllers/file_pushes_controller.rb:377
+#: ../../../app/controllers/file_pushes_controller.rb:380
 #: ../../../app/controllers/passwords_controller.rb:356
 #: ../../../app/controllers/passwords_controller.rb:359
 #: ../../../app/controllers/urls_controller.rb:348
@@ -124,6 +124,10 @@ msgstr ""
 "Password Pusher er et program for å sende passord sikkert over nettet. Lenker "
 "til passord utløper etter at et visst antall visninger og/eller tid har gått."
 
+#: ../../../app/views/devise/mailer/confirmation_instructions.html.erb:23
+msgid "Confirm your new account"
+msgstr "Bekreft din nye konto"
+
 #: ../../../app/views/devise/mailer/confirmation_instructions.html.erb:24
 msgid ""
 "Your account has been created but you must confirm that you own this email add"
@@ -148,6 +152,10 @@ msgstr "eller ved å kopiere og lime inn følgende URL i nettleseren din:"
 msgid "If you didn't create an account, no action is required."
 msgstr "Hvis du ikke opprettet en konto, er ingen handling nødvendig."
 
+#: ../../../app/views/devise/mailer/email_changed.html.erb:24
+msgid "Your email is being changed"
+msgstr "E-postadressen din blir endret"
+
 #: ../../../app/views/devise/mailer/email_changed.html.erb:26
 msgid "We're contacting you to notify you that your email at"
 msgstr "Vi kontakter deg for å varsle deg om at e-posten din på"
@@ -160,6 +168,10 @@ msgstr "endres til %s"
 msgid "has been changed to %s"
 msgstr "har blitt endret til %s"
 
+#: ../../../app/views/devise/mailer/password_change.html.erb:23
+msgid "Password Change"
+msgstr "Endring av passord"
+
 #: ../../../app/views/devise/mailer/password_change.html.erb:25
 msgid "We're contacting you to notify you that your password has been changed on"
 msgstr "Vi kontakter deg for å varsle deg om at passordet ditt er endret på"
@@ -171,6 +183,10 @@ msgid ""
 msgstr ""
 "Hvis du ikke startet dette og det ikke var meningen din, vennligst kontakt oss"
 " så snart som mulig."
+
+#: ../../../app/views/devise/mailer/reset_password_instructions.html.erb:24
+msgid "Password Change Request"
+msgstr "Forespørsel om passordendring"
 
 #: ../../../app/views/devise/mailer/reset_password_instructions.html.erb:26
 msgid ""
@@ -189,6 +205,10 @@ msgid ""
 "Your password won't change until you access the link above and create a new on"
 "e."
 msgstr "Passordet ditt endres ikke før du åpner lenken ovenfor og oppretter et nytt."
+
+#: ../../../app/views/devise/mailer/unlock_instructions.html.erb:23
+msgid "Unlock Your Account"
+msgstr "Lås opp kontoen din"
 
 #: ../../../app/views/devise/mailer/unlock_instructions.html.erb:26
 msgid ""
@@ -342,14 +362,10 @@ msgstr "Passord"
 msgid "Language"
 msgstr "Språk"
 
-#: ../../../app/views/feedbacks/create.html.erb:1
-msgid "Thank you for your feedback!  We'll be in touch soon!"
-msgstr "Takk for din tilbakemelding! Vi tar kontakt snart!"
-
 #: ../../../app/views/feedbacks/new.html.erb:1
 #: ../../../app/views/feedbacks/new.html.erb:2
 #: ../../../app/views/feedbacks/new.html.erb:42
-#: ../../../app/views/shared/_footer.html.erb:54
+#: ../../../app/views/shared/_footer.html.erb:53
 msgid "Send Feedback"
 msgstr "Send tilbakemelding"
 
@@ -366,8 +382,8 @@ msgid "Your Name"
 msgstr "Navnet ditt"
 
 #: ../../../app/views/feedbacks/new.html.erb:29
-msgid "Humanity Test: What is 7 plus 2?"
-msgstr "Humanity Test: Hva er 7 pluss 2?"
+msgid "What is one hundred minus 5?"
+msgstr "Hva er hundre minus 5?"
 
 #: ../../../app/views/feedbacks/new.html.erb:34
 msgid ""
@@ -1281,8 +1297,8 @@ msgstr ""
 " hemmelige nettadressen."
 
 #: ../../../app/views/layouts/login.html.erb:37
-#: ../../../app/views/shared/_footer.html.erb:12
-#: ../../../app/views/shared/_footer.html.erb:16
+#: ../../../app/views/shared/_footer.html.erb:11
+#: ../../../app/views/shared/_footer.html.erb:15
 #: ../../../app/views/shared/_header.html.erb:9
 #: ../../../app/views/shared/_header.html.erb:13
 msgid "Password Pusher Logo"
@@ -1309,7 +1325,7 @@ msgid "About Password Pusher"
 msgstr "Om Password Pusher"
 
 #: ../../../app/views/pages/about.html.erb:2
-#: ../../../app/views/shared/_footer.html.erb:49
+#: ../../../app/views/shared/_footer.html.erb:48
 msgid "About"
 msgstr "Om"
 
@@ -1460,7 +1476,7 @@ msgid "Thank you for supporting Password Pusher!"
 msgstr "Takk for at du støtter Password Pusher!"
 
 #: ../../../app/views/pages/about.html.erb:87
-#: ../../../app/views/shared/_footer.html.erb:26
+#: ../../../app/views/shared/_footer.html.erb:25
 msgid "Resources"
 msgstr "Ressurser"
 
@@ -1523,7 +1539,7 @@ msgid "Follow for news, changes & updates."
 msgstr "Følg med for nyheter, endringer og oppdateringer."
 
 #: ../../../app/views/pages/faq.html.erb:1
-#: ../../../app/views/shared/_footer.html.erb:35
+#: ../../../app/views/shared/_footer.html.erb:34
 msgid "FAQ"
 msgstr "FAQ"
 
@@ -1748,7 +1764,7 @@ msgid "The"
 msgstr "Den"
 
 #: ../../../app/views/pages/faq.html.erb:110
-#: ../../../app/views/shared/_footer.html.erb:44
+#: ../../../app/views/shared/_footer.html.erb:43
 msgid "Tools"
 msgstr "Verktøy"
 
@@ -1884,13 +1900,13 @@ msgstr ""
 
 #: ../../../app/views/pages/faq.html.erb:203
 msgid ""
-"In this respect, the public instance at pwpush.com is may be superior that it "
+"In this respect, the public instance at pwpush.com may be superior in that it "
 "contains only passwords without identifying information mixed among users from"
 " around the globe."
 msgstr ""
-"I denne forbindelse kan den offentlige forekomsten på pwpush.com være bedre en"
-"n den inneholder bare passord uten identifiserende informasjon blandet blant b"
-"rukere fra hele verden."
+"I denne forbindelse kan den offentlige forekomsten på pwpush.com være overlege"
+"n ved at den kun inneholder passord uten identifiserende informasjon blandet b"
+"lant brukere fra hele verden."
 
 #: ../../../app/views/pages/faq.html.erb:204
 msgid ""
@@ -2472,35 +2488,35 @@ msgstr "URL-er"
 msgid "New"
 msgstr "Ny"
 
-#: ../../../app/views/shared/_footer.html.erb:5
+#: ../../../app/views/shared/_footer.html.erb:4
 msgid "Peter"
 msgstr "Peter"
 
-#: ../../../app/views/shared/_footer.html.erb:23
+#: ../../../app/views/shared/_footer.html.erb:22
 msgid "Front Page"
 msgstr "Forside"
 
-#: ../../../app/views/shared/_footer.html.erb:31
+#: ../../../app/views/shared/_footer.html.erb:30
 msgid "Docker Containers"
 msgstr "Docker containere"
 
-#: ../../../app/views/shared/_footer.html.erb:36
+#: ../../../app/views/shared/_footer.html.erb:35
 msgid "JSON API"
 msgstr "JSON API"
 
-#: ../../../app/views/shared/_footer.html.erb:37
+#: ../../../app/views/shared/_footer.html.erb:36
 msgid "Key Generator"
 msgstr "Nøkkelgenerator"
 
-#: ../../../app/views/shared/_footer.html.erb:40
+#: ../../../app/views/shared/_footer.html.erb:39
 msgid "Source Code"
 msgstr "Kildekode"
 
-#: ../../../app/views/shared/_footer.html.erb:52
+#: ../../../app/views/shared/_footer.html.erb:51
 msgid "Overview"
 msgstr "Oversikt"
 
-#: ../../../app/views/shared/_footer.html.erb:53
+#: ../../../app/views/shared/_footer.html.erb:52
 msgid "Help Translate!"
 msgstr "Hjelp til å oversette!"
 

@@ -236,6 +236,8 @@ sr:
       multi_page: Приказивање %{model} %{from} - %{to} од %{count} укупно
       multi_page_html: Приказивање %{model} <b>%{from} - %{to}</b> од <b>%{count}</b>
         укупно
+    previous_aria_label: Претходна страница
+    next_aria_label: Следећа страна
   flash:
     actions:
       create:
@@ -574,3 +576,24 @@ sr:
           или транслатион.иандек_апи_кеи у цонфиг/и18н-таскс.имл. Преузмите кључ на
           хттпс://тецх.иандек.цом/транслате.
         no_results: Иандек није дао резултате.
+  routes:
+    users: корисника
+    passwords: лозинке
+    files: фајлови
+    urls: урлс
+    sessions: сесије
+    registrations: регистрације
+    unlocks: откључава
+    feedbacks: повратне информације
+    pages: странице
+    new: Нова
+    edit: Уредити
+    update: ажурирање
+    destroy: уништити
+    create: Креирај
+    expired: истекао
+    active: активан
+    audit: ревизија
+    access: приступ
+    passphrase: приступна фраза
+    preview: превиев

@@ -63,6 +63,33 @@ enable_logins: false
 #
 disable_signups: false
 
+## Limit Signups to Specific Email Domains
+#
+# By default, anyone can sign up for an account.  The following default regular
+# expression just validates if it is a valid email address.
+#
+# signup_email_regexp: '\A[^@\s]+@[^@\s]+\z'
+#
+# If you would like to limit signups to specific email domains, you can extend
+# the regular expression below to include the domains you want to allow.
+#
+# For example, to only allow signups from the domain 'hey.com', you would
+# change the following to:
+#
+#   signup_email_regexp: '\A[^@\s]+@(hey\.com)\z'
+#
+# or for multiple domains:
+#
+#  signup_email_regexp: '\A[^@\s]+@(hey\.com|gmail\.com)\z'
+#
+# Tip: use https://rubular.com to test out your regular expressions. It includes
+# a guide to what each component means in regexp.
+#
+# Environment variable override:
+# PWP__SIGNUP_EMAIL_REGEXP='\A[^@\s]+@[^@\s]+\z'
+#
+signup_email_regexp: '\A[^@\s]+@[^@\s]+\z'
+
 ### Allow Anonymous
 #
 # By default, Password Pusher can be used by anonymous users to push
@@ -110,6 +137,42 @@ host_protocol: 'https'
 # Set this value without a trailing slash ('/').
 #
 # override_base_url: 'https://pwpush.mydomain.com'
+
+### Show version on the footer
+#
+# Enable/disable PasswordPusher verison on the footer.
+#
+# Environment variable override:
+# PWP__SHOW_VERSION=true
+#
+# Default: true
+
+show_version: true
+
+### Allowed Hosts
+#
+# This is a list of allowed hosts for the application.  This is used to
+# prevent host header attacks.
+#
+# When set, the application will only respond to requests with a host header
+# that matches one of the values in this list.
+#
+# This feature is generally only used when the application is behind a proxy.
+#
+# It's generally not required to use this unless you are getting the related error
+# in the application.  localhost and the IP that the application is running on
+# are always allowed.
+#
+# Note: If you need more than one value to the environment variable, separate
+# entries by a single space.
+#
+# Environment variable override:
+# PWP__ALLOWED_HOSTS='pwpush.com pwpush.mydomain.com pwpush.myotherdomain'
+#
+# allowed_hosts:
+#   - 'pwpush.com'
+#   - 'pwpush.mydomain.com'
+#   - 'pwpush.myotherdomain.com'
 
 ## Expiration Settings for Password Pushes
 #
@@ -399,6 +462,15 @@ files:
     credentials: ''
     # Environment Variable Override: PWP__FILES__GCS__BUCKET=''
     bucket: ''
+    #
+    # Optionally use IAM instead of the credentials when signing URLs.
+    # This is useful if you are authenticating your GKE applications with Workload Identity,
+    # See here: https://edgeguides.rubyonrails.org/active_storage_overview.html#google-cloud-storage-service
+    #
+    # Environment Variable Override: PWP__FILES__GCS__IAM=true
+    iam: false
+    # Environment Variable Override: PWP__FILES__GCS__GSA_EMAIL='email@domain.com'
+    gsa_email: null
 
   # Microsoft Azure Storage Credentials
   as:
@@ -491,6 +563,11 @@ brand:
   #
   tagline: 'Go Ahead.  Email Another Password.'
 
+  ### Site Disclaimer
+  #
+  # Environment variable override: PWP__BRAND__DISCLAIMER='Use at own use risk.'
+  # disclaimer: 'This is a dummy disclaimer and should not be considered legally binding or taken seriously in any way. The content provided here is for entertainment and illustrative purposes only. Any resemblance to actual disclaimers is purely coincidental. We do not endorse or encourage the use of this disclaimer for any real-world applications, and we strongly advise consulting a legal professional for creating legitimate and appropriate disclaimers for your specific needs. By reading this disclaimer, you agree not to hold us responsible for any confusion, amusement, or bewilderment it may cause. This disclaimer has no legal validity, and any attempt to rely on it for legal, financial, or any other serious matters is ill-advised. Please use disclaimers responsibly and in accordance with applicable laws and regulations.'
+
   ### Show Footer Menu Toggle
   #
   # Environment variable override: PWP__BRAND__SHOW_FOOTER_MENU='true'
@@ -562,31 +639,31 @@ brand:
 throttling:
   # ..maximum number of allowed HTTP requests per day
   #
-  # Default: 1000
+  # Default: 5000
   #
-  # Environment Variable Override: PWP__THROTTLING__DAILY='1000'
-  daily: 1000
+  # Environment Variable Override: PWP__THROTTLING__DAILY='5000'
+  daily: 5000
 
   # ..maximum number of allowed HTTP requests per hour
   #
-  # Default: 100
+  # Default: 600
   #
-  # Environment Variable Override: PWP__THROTTLING__HOURLY='100'
-  hourly: 100
+  # Environment Variable Override: PWP__THROTTLING__HOURLY='600'
+  hourly: 600
 
   # ..maximum number of allowed HTTP requests per minute
   #
-  # Default: 30
+  # Default: 60
   #
-  # Environment Variable Override: PWP__THROTTLING__MINUTE='30'
-  minute: 30
+  # Environment Variable Override: PWP__THROTTLING__MINUTE='60'
+  minute: 60
 
   # ..maximum number of allowed HTTP requests per second
   #
-  # Default: 2
+  # Default: 20
   #
-  # Environment Variable Override: PWP__THROTTLING__SECOND='2'
-  second: 2
+  # Environment Variable Override: PWP__THROTTLING__SECOND='20'
+  second: 20
 
 
 ### Mail Server Configuration
@@ -717,7 +794,10 @@ language_codes:
   es: 'Español'
   fi: 'Suomi'
   fr: 'Français'
+  hi: 'हिन्दी'
   hu: 'Magyar'
+  id: 'Indonesian'
+  is: 'Íslenska'
   it: 'Italiano'
   ja: '日本語'
   ko: '한국어'
@@ -727,11 +807,14 @@ language_codes:
   pl: 'Polski'
   pt-BR: 'Português'
   pt-PT: 'Português'
+  ro: 'Română'
   ru: 'Русский'
   sr: 'Српски'
   sv: 'Svenska'
   th: 'ไทย'
-  zh-CN: '中国人'
+  uk: 'Українська'
+  ur: 'اردو'
+  zh-CN: '中文'
 
 # Used internally for the language selector model.
 # This provides a conversion of language codes to
@@ -748,7 +831,10 @@ country_codes:
   es: :es
   fi: :fi
   fr: :fr
+  hi: :in
   hu: :hu
+  id: :id
+  is: :is
   it: :it
   ja: :jp
   ko: :kr
@@ -758,10 +844,13 @@ country_codes:
   pl: :pl
   pt-BR: :br
   pt-PT: :pt
+  ro: :ro
   ru: :ru
   sr: :rs
   sv: :se
   th: :th
+  uk: :ua
+  ur: :pk
   zh-CN: :cn
 
 

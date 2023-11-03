@@ -237,6 +237,8 @@ lv:
         other: 'Tiek attēlots <b>all&nbsp;%{count}</b> %{model} '
       multi_page: Kopā tiek attēlots %{model} %{from} - %{to} no %{count}
       multi_page_html: Kopā tiek attēlots %{model} <b>%{from} - %{to}</b> no <b>%{count}</b>
+    previous_aria_label: Iepriekšējā lapa
+    next_aria_label: Nākamā lapaspuse
   flash:
     actions:
       create:
@@ -595,3 +597,24 @@ lv:
           mainīgo vai translation.yandex_api_key failā config/i18n-tasks.yml. Iegūstiet
           atslēgu vietnē https://tech.yandex.com/translate.
         no_results: Yandex nesniedza rezultātus.
+  routes:
+    users: lietotājiem
+    passwords: paroles
+    files: failus
+    urls: URL
+    sessions: sesijas
+    registrations: reģistrācijas
+    unlocks: atslēdz
+    feedbacks: atsauksmes
+    pages: lapas
+    new: jauns
+    edit: rediģēt
+    update: Atjaunināt
+    destroy: iznīcināt
+    create: izveidot
+    expired: beidzies derīguma termiņš
+    active: aktīvs
+    audit: audits
+    access: piekļuvi
+    passphrase: ieejas frāze
+    preview: priekšskatījums

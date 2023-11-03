@@ -30,8 +30,10 @@ export PWP__DEFAULT_LOCALE='fr'
 
 ```sh
 # Change the default language for the application to French
-docker run -d --env PWP__DEFAULT_LOCALE=fr -p "5100:5100" pglombardo/pwpush-ephemeral:release
+docker run -d --env PWP__DEFAULT_LOCALE=fr -p "5100:5100" pglombardo/pwpush:release
 ```
+
+_Tip: If you have to set a large number of environment variables for Docker, consider using a Docker env-file.  There is an [example docker-env-file](https://github.com/pglombardo/PasswordPusher/blob/master/containers/docker/pwpush-docker-env-file) with instructions available._
 
 ## Configuring via a Custom `settings.yml` File
 
@@ -46,7 +48,7 @@ To replace this file with your own custom version, you can launch the Docker con
 ```sh
     docker run -d \
       --mount type=bind,source=/path/settings.yml,target=/opt/PasswordPusher/config/settings.yml \
-      -p "5100:5100" pglombardo/pwpush-ephemeral:release
+      -p "5100:5100" pglombardo/pwpush:release
 ```
 
 # Application Encryption
@@ -84,6 +86,7 @@ Notes:
 | --------- | ------------------ | --- |
 | PWP__DEFAULT_LOCALE | Sets the default language for the application.  See the [documentation](https://github.com/pglombardo/PasswordPusher#internationalization). | `en` |
 | PWP__RELATIVE_ROOT | Runs the application in a subfolder.  e.g. With a value of `pwp` the front page will then be at `https://url/pwp` | `Not set` |
+| PWP__SHOW_VERSION | Show the version in the footer | `true` |
 
 ## Password Push Expiration Settings
 
@@ -120,7 +123,7 @@ Notes:
 
 To enable logins in your instance of Password Pusher, you must have an SMTP server available to send emails through.  These emails are sent for events such as password reset, unlock, registration etc..
 
-To use logins, you should be running a databased backed version of Password Pusher.  Logins will likely work in ephemeral but aren't suggested since all data is wiped with every restart.
+To use logins, you should be running a database backed version of Password Pusher.  Logins will likely work in an ephemeral setup but aren't suggested since all data is wiped with every restart.
 
 _All_ of the following environments need to be set (except SMTP authentication if none) for application logins to function properly.
 
@@ -135,12 +138,14 @@ _All_ of the following environments need to be set (except SMTP authentication i
 | PWP__MAIL__SMTP_PASSWORD | If your mail server requires authentication, set the password in this setting. | `smtp_password` |
 | PWP__MAIL__SMTP_AUTHENTICATION | If your mail server requires authentication, you need to specify the authentication type here. This is a string and one of :plain (will send the password in the clear), :login (will send password Base64 encoded) or :cram_md5 (combines a Challenge/Response mechanism to exchange information and a cryptographic Message Digest 5 algorithm to hash important information) | `plain` |
 | PWP__MAIL__SMTP_STARTTLS | Use STARTTLS when connecting to your SMTP server and fail if unsupported. | `true` |
+| PWP__MAIL__SMTP_ENABLE_STARTTLS_AUTO | Detects if STARTTLS is enabled in your SMTP server and starts to use it | `true` |
 | PWP__MAIL__OPEN_TIMEOUT | Number of seconds to wait while attempting to open a connection. | `10` |
 | PWP__MAIL__READ_TIMEOUT | Number of seconds to wait until timing-out a read(2) call. | `10` |
 | PWP__HOST_DOMAIN | Used to build fully qualified URLs in emails.  Where is your instance hosted? | `pwpush.com` |
 | PWP__HOST_PROTOCOL | The protocol to access your Password Pusher instance.  HTTPS advised. | `https` |
 | PWP__MAIL__MAILER_SENDER | This is the "From" address in sent emails. | '"Company Name" <user@example.com>' |
 | PWP__DISABLE_SIGNUPS| Once your user accounts are created, you can set this to disable any further user account creation.  Sign up links and related backend functionality is disabled when `true`. | `false` |
+| PWP__SIGNUP_EMAIL_REGEXP | The regular expression used to validate emails for new user signups.  This can be modified to limit new account creation to a subset of domains. e.g. <code>\A[^@\s]+@(hey\.com\|gmail\.com)\z</code>.  _Tip: use https://rubular.com to test out your regular expressions. It includes a guide to what each component means in regexp._ | `\A[^@\s]+@[^@\s]+\z` |
 
 ## Shell Example
 
@@ -165,7 +170,11 @@ export PWP__MAIL__MAILER_SENDER='"Spiderman" <thespider@mycompany.org>'
 
 # Enabling File Pushes
 
-To enable file uploads (File Pushes) in your instance of Password Pusher, you must have logins enabled (see above) and specify a place to store uploaded files.
+To enable file uploads (File Pushes) in your instance of Password Pusher, there are a few requirements:
+
+1.  you must have logins enabled (see above)
+2.  specify a place to store uploaded files
+3.  If you use cloud storage, configure the CORS configuration in your buckets (detailed below)
 
 The following settings enable/disable the feature and specify where to store uploaded files.
 
@@ -202,9 +211,18 @@ The default location for local storage is `./storage`.
 
 If using containers and you prefer local storage, you can add a volume mount to the container at the path `/opt/PasswordPusher/storage`:
 
-`docker run -d -p "5100:5100" -v /var/lib/pwpush/files:/opt/PasswordPusher/storage pglombardo/pwpush-postgres:release`
+`docker run -d -p "5100:5100" -v /var/lib/pwpush/files:/opt/PasswordPusher/storage pglombardo/pwpush:release`
+
+Please _make sure_ that the directory is writeable by the docker container.
+
+A CORS configuration is not required for local storage.
 
 ## Amazon S3
+
+To configure the application to store files in an Amazon S3 bucket, you have to:
+
+1. set the required environment variables detailed below (or the equivalent values in `settings.yml`)
+2. apply a CORS configuration to your S3 bucket (see next section)
 
 | Environment Variable | Description | Value(s) |
 | --------- | ------------------ | --- |
@@ -215,7 +233,38 @@ If using containers and you prefer local storage, you can add a volume mount to 
 | PWP__FILES__S3__REGION | S3 Region| None |
 | PWP__FILES__S3__BUCKET | The S3 bucket name | None |
 
+### Amazon S3 CORS Configuration
+
+The application performs direct uploads from the browser to your Amazon S3 bucket.  This provides better performance and reduces load on the application itself.
+
+For this to work, you have to add a CORS configuration to your bucket.
+
+This direct upload functionality is done using a library called ActiveStorage.  For the full documentation on configuring CORS for ActiveStorage, [see here](https://edgeguides.rubyonrails.org/active_storage_overview.html#cross-origin-resource-sharing-cors-configuration).
+
+```json
+[
+  {
+    "AllowedHeaders": [
+      "Content-Type",
+      "Content-MD5",
+      "Content-Disposition"
+    ],
+    "AllowedMethods": [
+      "PUT"
+    ],
+    "AllowedOrigins": [
+      "https://www.example.com"  << Change to your URL
+    ],
+    "MaxAgeSeconds": 3600
+  }
+]
+```
 ## Google Cloud Storage
+
+To configure the application to store files in Google Cloud Storage, you have to:
+
+1. set the required environment variables detailed below (or the equivalent values in `settings.yml`)
+2. apply a CORS configuration (see next section)
 
 | Environment Variable | Description | Value(s) |
 | --------- | ------------------ | --- |
@@ -224,7 +273,32 @@ If using containers and you prefer local storage, you can add a volume mount to 
 | PWP__FILES__GCS__CREDENTIALS | GCS Credentials | None |
 | PWP__FILES__GCS__BUCKET | The GCS bucket name | None |
 
+### Google Cloud Storage CORS Configuration
+
+The application performs direct uploads from the browser to Google Cloud Storage.  This provides better performance and reduces load on the application itself.
+
+For this to work, you have to add a CORS configuration.
+
+This direct upload functionality is done using a library called ActiveStorage.  For the full documentation on configuring CORS for ActiveStorage, [see here](https://edgeguides.rubyonrails.org/active_storage_overview.html#cross-origin-resource-sharing-cors-configuration).
+
+```json
+[
+  {
+    "origin": ["https://www.example.com"],
+    "method": ["PUT"],
+    "responseHeader": ["Content-Type", "Content-MD5", "Content-Disposition"],
+    "maxAgeSeconds": 3600
+  }
+]
+```
+
+
 ## Azure Storage
+
+To configure the application to store files in Azure Storage, you have to:
+
+1. set the required environment variables detailed below (or the equivalent values in `settings.yml`)
+2. apply a CORS configuration (see next section)
 
 | Environment Variable | Description | Value(s) |
 | --------- | ------------------ | --- |
@@ -232,6 +306,25 @@ If using containers and you prefer local storage, you can add a volume mount to 
 | PWP__FILES__AS__STORAGE_ACCOUNT_NAME | Azure Storage Account Name | None |
 | PWP__FILES__AS__STORAGE_ACCESS_KEY | Azure Storage Account Key | None |
 | PWP__FILES__AS__CONTAINER | Azure Storage Container Name | None |
+
+### Azure Storage CORS Configuration
+
+The application performs direct uploads from the browser to Azure Storage.  This provides better performance and reduces load on the application itself.
+
+For this to work, you have to add a CORS configuration.
+
+This direct upload functionality is done using a library called ActiveStorage.  For the full documentation on configuring CORS for ActiveStorage, [see here](https://edgeguides.rubyonrails.org/active_storage_overview.html#cross-origin-resource-sharing-cors-configuration).
+
+```xml
+<Cors>
+  <CorsRule>
+    <AllowedOrigins>https://www.example.com</AllowedOrigins>
+    <AllowedMethods>PUT</AllowedMethods>
+    <AllowedHeaders>Content-Type, Content-MD5, x-ms-blob-content-disposition, x-ms-blob-type</AllowedHeaders>
+    <MaxAgeInSeconds>3600</MaxAgeInSeconds>
+  </CorsRule>
+</Cors>
+```
 
 # Enabling URL Pushes
 
@@ -268,6 +361,7 @@ This can be done with the following environment variables:
 | --------- | ------------------ | --- |
 | PWP__BRAND__TITLE | Title for the site. | `Password Pusher` |
 | PWP__BRAND__TAGLINE | Tagline for the site.  | `Go Ahead.  Email Another Password.` |
+| PWP__BRAND__DISCLAIMER | Disclaimer for the site.  | `Undefined` |
 | PWP__BRAND__SHOW_FOOTER_MENU | On/Off switch for the footer menu. | `true` |
 | PWP__BRAND__LIGHT_LOGO | Site logo image for the light theme. | `logo-transparent-sm-bare.png` |
 | PWP__BRAND__DARK_LOGO | Site logo image for the dark theme. | `logo-transparent-sm-bare.png` |
@@ -279,7 +373,7 @@ The values for the `*_LOGO` images can either be:
 
 As an example for #2 above, say you place your logo images locally into `/var/lib/pwpush/logos/`.  You would then mount that directory into the container:
 
-`docker run -d -p "5100:5100" -v /var/lib/pwpush/logos:/opt/PasswordPusher/public/logos pglombardo/pwpush-postgres:release`
+`docker run -d -p "5100:5100" -v /var/lib/pwpush/logos:/opt/PasswordPusher/public/logos pglombardo/pwpush:release`
 
 or alternatively for a `docker-compose.yml` file:
 
@@ -289,7 +383,7 @@ volumes:
   - /var/lib/pwpush/logos:/opt/PasswordPusher/public/logos:r
 ```
 
-See [here](https://github.com/pglombardo/PasswordPusher/blob/master/containers/docker/pwpush-postgres/docker-compose.yml) for a larger Docker Compose explanation.
+See [here](https://github.com/pglombardo/PasswordPusher/blob/master/containers/docker/pwpush/docker-compose-postgres.yml) for a larger Docker Compose explanation.
 
 With this setup, you can then set your `LOGO` environment variables (or `settings.yml` options) to:
 
@@ -301,6 +395,16 @@ PWP__BRAND__LIGHT_LOGO=/logos/mylogo.png
 
 * the `brand` section of [settings.yml](https://github.com/pglombardo/PasswordPusher/blob/master/config/settings.yml) for more details, examples and description.
 * [this issue comment](https://github.com/pglombardo/PasswordPusher/issues/432#issuecomment-1282158006) on how to mount images into the contianer and set your environment variables accordingly
+
+# Change the Default Language
+
+The application comes with more than 24 languages bundled in which are selectable inside the application.  The default language of the application is English.  If you would like to change this default language, simply set the following environment variable for your application.
+
+```PWP__DEFAULT_LOCALE=is```
+
+A list of supported languages (and their language codes) can be found in the [settings.yml](https://github.com/pglombardo/PasswordPusher/blob/master/config/settings.yml#L702-L734) file under `language_codes`.
+
+Choose which language you would like to have as the default language, and use the two letter code as the value for the environment variable.
 
 # Themes
 
@@ -332,7 +436,7 @@ __Note:__ Since the theme is a boot level selection, the theme can only be selec
 So to set the `quartz` theme for a Docker container:
 
 ```bash
-docker run --env PWP__THEME=quartz --env PWP_PRECOMPILE=true -p "5100:5100" pglombardo/pwpush-ephemeral:1.26.10
+docker run --env PWP__THEME=quartz --env PWP_PRECOMPILE=true -p "5100:5100" pglombardo/pwpush:release
 ```
 
 or alternatively for source code:
@@ -348,6 +452,8 @@ bin/rails server
 Password Pusher has a pre-compilation step of assets.  This is used to fingerprint assets and pre-process CSS code for better performance.
 
 If using Docker containers, you can simply set the `PWP_PRECOMPILE=true` environment variable.  On container boot, all assets will be precompiled and bundled into `/assets`.
+
+__Note: Precompiling all application assets for a new theme on container boot can add 30-90 seconds to the boot process (depending on the system).  Make sure to allow this time in your health checks before declaring the container as unresponsive.__
 
 To manually precompile assets run `bin/rails assets:precompile`.
 
@@ -374,7 +480,7 @@ When changing this file inside a Docker container, make sure to set the precompi
 An example Docker command to override that file would be:
 
 ```
-docker run -e PWP_PRECOMPILE=true --mount type=bind,source=/path/to/my/custom.css,target=/opt/PasswordPusher/app/assets/stylesheets/custom.css -p 5100:5100 pglombardo/pwpush-ephemeral:release
+docker run -e PWP_PRECOMPILE=true --mount type=bind,source=/path/to/my/custom.css,target=/opt/PasswordPusher/app/assets/stylesheets/custom.css -p 5100:5100 pglombardo/pwpush:release
 ```
 or the `docker-compose.yml` equivalent:
 
@@ -383,7 +489,7 @@ version: '2.1'
 services:
 
   pwpush:
-    image: docker.io/pglombardo/pwpush-ephemeral:release
+    image: docker.io/pglombardo/pwpush:release
     ports:
       - "5100:5100"
     environment:
@@ -396,7 +502,7 @@ services:
 
 Remember that when doing this, this new CSS code has to be precompiled.
 
-To do this in Docker containers, simply set the environment variable `PWP_PRECOMPILE=true`.  For source code, run `bin/rails assets:precompile`.  This compilation process will incorporate the custom CSS into the updated site theme. 
+To do this in Docker containers, simply set the environment variable `PWP_PRECOMPILE=true`.  For source code, run `bin/rails assets:precompile`.  This compilation process will incorporate the custom CSS into the updated site theme.
 
 # Google Analytics
 
@@ -415,10 +521,10 @@ per a given time period (per second, minute, hourly, or daily).
 
 | Environment Variable | Description | Default Value |
 | --------- | ------------------ | --- |
-| PWP__THROTTLING__DAILY | The maximum number of allowed HTTP requests per day | `1000` |
-| PWP__THROTTLING__HOURLY | The maximum number of allowed HTTP requests per hour | `100` |
-| PWP__THROTTLING__MINUTE | The maximum number of allowed HTTP requests per minute | `30` |
-| PWP__THROTTLING__SECOND | The maximum number of allowed HTTP requests per second | `2` |
+| PWP__THROTTLING__DAILY | The maximum number of allowed HTTP requests per day | `5000` |
+| PWP__THROTTLING__HOURLY | The maximum number of allowed HTTP requests per hour | `600` |
+| PWP__THROTTLING__MINUTE | The maximum number of allowed HTTP requests per minute | `60` |
+| PWP__THROTTLING__SECOND | The maximum number of allowed HTTP requests per second | `20` |
 
 
 # Logging
@@ -435,8 +541,10 @@ See also the Proxies section below.
 
 | Environment Variable | Description |
 | --------- | ------------------ |
-| FORCE_SSL | The existence of this variable will set `config.force_ssl` to `true` and generate HTTPS based secret URLs
+| FORCE_SSL | (Deprecated) The existence of this variable will set `config.force_ssl` to `true` and generate HTTPS based secret URLs
 
+__Note:__ This is a legacy setting and is no longer suggested for use.  If using a proxy, make sure to have your proxy forward the `X-Forwarded-Host`, `X-Forwarded-Port` and `X-Forwarded-Proto` HTTP headers.  See the "Proxies" section for more information and instructions.
+_
 # Proxies
 
 An occasional issue is that when using Password Pusher behind a proxy, the generated secret URLs are incorrect.  They often have the backend URL & port instead of the public fully qualified URL - or use HTTP instead of HTTPS (or all of the preceding).

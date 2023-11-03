@@ -236,6 +236,8 @@ fi:
       multi_page: Näytetään %{model} %{from} - %{to} joita on yhteensä %{count}
       multi_page_html: Näytetään %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> joita on
         yhteensä <b>%{count}</b>
+    previous_aria_label: Edellinen sivu
+    next_aria_label: Seuraava sivu
   flash:
     actions:
       create:
@@ -574,3 +576,24 @@ fi:
         no_api_key: Aseta Yandex API-avain YANDEX_API_KEY-ympäristömuuttujan tai translation.yandex_api_key
           kautta tiedostossa config/i18n-tasks.yml. Hanki avain osoitteesta https://tech.yandex.com/translate.
         no_results: Yandex ei palauttanut tuloksia.
+  routes:
+    users: käyttäjiä
+    passwords: salasanat
+    files: tiedostot
+    urls: URL-osoitteet
+    sessions: istuntoja
+    registrations: rekisteröinnit
+    unlocks: avaa lukituksen
+    feedbacks: palautetta
+    pages: sivuja
+    new: Uusi
+    edit: muokata
+    update: päivittää
+    destroy: tuhota
+    create: luoda
+    expired: vanhentunut
+    active: aktiivinen
+    audit: tarkastaa
+    access: pääsy
+    passphrase: tunnuslause
+    preview: esikatselu

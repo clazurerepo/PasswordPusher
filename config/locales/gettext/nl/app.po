@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PasswordPusher 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2023-05-19 16:33+0200\n"
-"PO-Revision-Date: 2023-05-19 16:33+0200\n"
+"POT-Creation-Date: 2023-10-10 09:42+0200\n"
+"PO-Revision-Date: 2023-10-10 09:43+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Not Found"
 msgstr "Niet Gevonden"
 
-#: ../../../app/controllers/feedbacks_controller.rb:10
+#: ../../../app/controllers/feedbacks_controller.rb:12
 msgid ""
 "Our apologies but you failed the spam check.  You could try contacting us on G"
 "ithub instead."
@@ -30,11 +30,11 @@ msgstr ""
 "Onze excuses, maar u heeft de spamcontrole niet doorstaan. U kunt in plaats da"
 "arvan contact met ons opnemen op Github."
 
-#: ../../../app/controllers/feedbacks_controller.rb:15
-msgid "Feedback sent!"
-msgstr "Reactie Verzonden!"
-
 #: ../../../app/controllers/feedbacks_controller.rb:17
+msgid "Feedback sent!  We will get back to you as soon as possible."
+msgstr "Feedback verzonden! We nemen zo snel mogelijk contact met u op."
+
+#: ../../../app/controllers/feedbacks_controller.rb:19
 msgid ""
 "Could not send feedback.  Did you pass the Humanity Test?  Valid email?  Try a"
 "gain?"
@@ -52,7 +52,7 @@ msgstr ""
 "Dat wachtwoord is onjuist. Probeer het opnieuw of neem contact op met de perso"
 "on of organisatie die u deze link heeft gestuurd."
 
-#: ../../../app/controllers/file_pushes_controller.rb:221
+#: ../../../app/controllers/file_pushes_controller.rb:224
 msgid ""
 "Only 10 active file pushes allowed while in Beta and until things are stable. "
 "If it's an option, you can manually expire existing pushes before creating new"
@@ -62,26 +62,26 @@ msgstr ""
 "Als het een optie is, kunt u bestaande pushs handmatig laten verlopen voordat "
 "u nieuwe maakt."
 
-#: ../../../app/controllers/file_pushes_controller.rb:315
+#: ../../../app/controllers/file_pushes_controller.rb:317
 #: ../../../app/controllers/passwords_controller.rb:297
 #: ../../../app/controllers/urls_controller.rb:290
 msgid "That push doesn't belong to you."
 msgstr "Die push is niet van jou."
 
-#: ../../../app/controllers/file_pushes_controller.rb:345
+#: ../../../app/controllers/file_pushes_controller.rb:347
 #: ../../../app/controllers/passwords_controller.rb:327
 #: ../../../app/controllers/urls_controller.rb:320
 #: ../../../app/controllers/urls_controller.rb:324
 msgid "That push does not belong to you."
 msgstr "Die push is niet van jou."
 
-#: ../../../app/controllers/file_pushes_controller.rb:350
+#: ../../../app/controllers/file_pushes_controller.rb:352
 #: ../../../app/controllers/passwords_controller.rb:332
 msgid "That push is not deletable by viewers."
 msgstr "Die push is niet te verwijderen door kijkers."
 
-#: ../../../app/controllers/file_pushes_controller.rb:356
-#: ../../../app/controllers/file_pushes_controller.rb:357
+#: ../../../app/controllers/file_pushes_controller.rb:358
+#: ../../../app/controllers/file_pushes_controller.rb:359
 #: ../../../app/controllers/passwords_controller.rb:338
 #: ../../../app/controllers/passwords_controller.rb:339
 #: ../../../app/controllers/urls_controller.rb:330
@@ -89,8 +89,8 @@ msgstr "Die push is niet te verwijderen door kijkers."
 msgid "That push is already expired."
 msgstr "Die push is al verlopen."
 
-#: ../../../app/controllers/file_pushes_controller.rb:375
-#: ../../../app/controllers/file_pushes_controller.rb:378
+#: ../../../app/controllers/file_pushes_controller.rb:377
+#: ../../../app/controllers/file_pushes_controller.rb:380
 #: ../../../app/controllers/passwords_controller.rb:356
 #: ../../../app/controllers/passwords_controller.rb:359
 #: ../../../app/controllers/urls_controller.rb:348
@@ -124,6 +124,10 @@ msgstr ""
 "Password Pusher is een applicatie om wachtwoorden veilig via het web te verzen"
 "den. Links naar wachtwoorden verlopen na een bepaald aantal views en/of tijd."
 
+#: ../../../app/views/devise/mailer/confirmation_instructions.html.erb:23
+msgid "Confirm your new account"
+msgstr "Bevestig je nieuwe account"
+
 #: ../../../app/views/devise/mailer/confirmation_instructions.html.erb:24
 msgid ""
 "Your account has been created but you must confirm that you own this email add"
@@ -150,6 +154,10 @@ msgstr "of door de volgende URL in uw browser te kopiëren en te plakken:"
 msgid "If you didn't create an account, no action is required."
 msgstr "Als je geen account hebt aangemaakt, hoef je niets te doen."
 
+#: ../../../app/views/devise/mailer/email_changed.html.erb:24
+msgid "Your email is being changed"
+msgstr "Je e-mailadres wordt gewijzigd"
+
 #: ../../../app/views/devise/mailer/email_changed.html.erb:26
 msgid "We're contacting you to notify you that your email at"
 msgstr "We nemen contact met u op om u te laten weten dat uw e-mailadres op"
@@ -161,6 +169,10 @@ msgstr "wordt gewijzigd in %s"
 #: ../../../app/views/devise/mailer/email_changed.html.erb:32
 msgid "has been changed to %s"
 msgstr "is gewijzigd in %s"
+
+#: ../../../app/views/devise/mailer/password_change.html.erb:23
+msgid "Password Change"
+msgstr "Wachtwoord verandering"
 
 #: ../../../app/views/devise/mailer/password_change.html.erb:25
 msgid "We're contacting you to notify you that your password has been changed on"
@@ -175,6 +187,10 @@ msgid ""
 msgstr ""
 "Als je dit niet hebt geïnitieerd en het was ook niet je bedoeling, neem dan zo"
 " snel mogelijk contact met ons op."
+
+#: ../../../app/views/devise/mailer/reset_password_instructions.html.erb:24
+msgid "Password Change Request"
+msgstr "Aanvraag wachtwoord wijzigen"
 
 #: ../../../app/views/devise/mailer/reset_password_instructions.html.erb:26
 msgid ""
@@ -197,6 +213,10 @@ msgid ""
 msgstr ""
 "Uw wachtwoord zal niet veranderen totdat u toegang tot de bovenstaande link en"
 " maak een nieuwe."
+
+#: ../../../app/views/devise/mailer/unlock_instructions.html.erb:23
+msgid "Unlock Your Account"
+msgstr "Ontgrendel uw account"
 
 #: ../../../app/views/devise/mailer/unlock_instructions.html.erb:26
 msgid ""
@@ -353,14 +373,10 @@ msgstr "Wachtwoord"
 msgid "Language"
 msgstr "Taal"
 
-#: ../../../app/views/feedbacks/create.html.erb:1
-msgid "Thank you for your feedback!  We'll be in touch soon!"
-msgstr "Bedankt voor je feedback! We nemen snel contact op!"
-
 #: ../../../app/views/feedbacks/new.html.erb:1
 #: ../../../app/views/feedbacks/new.html.erb:2
 #: ../../../app/views/feedbacks/new.html.erb:42
-#: ../../../app/views/shared/_footer.html.erb:54
+#: ../../../app/views/shared/_footer.html.erb:53
 msgid "Send Feedback"
 msgstr "Feedback Verzenden"
 
@@ -377,8 +393,8 @@ msgid "Your Name"
 msgstr "Uw Naam"
 
 #: ../../../app/views/feedbacks/new.html.erb:29
-msgid "Humanity Test: What is 7 plus 2?"
-msgstr "Menselijkheidstest: wat is 7 plus 2?"
+msgid "What is one hundred minus 5?"
+msgstr "Wat is honderd min 5?"
 
 #: ../../../app/views/feedbacks/new.html.erb:34
 msgid ""
@@ -1296,8 +1312,8 @@ msgstr ""
 "URL heeft gegeven."
 
 #: ../../../app/views/layouts/login.html.erb:37
-#: ../../../app/views/shared/_footer.html.erb:12
-#: ../../../app/views/shared/_footer.html.erb:16
+#: ../../../app/views/shared/_footer.html.erb:11
+#: ../../../app/views/shared/_footer.html.erb:15
 #: ../../../app/views/shared/_header.html.erb:9
 #: ../../../app/views/shared/_header.html.erb:13
 msgid "Password Pusher Logo"
@@ -1324,7 +1340,7 @@ msgid "About Password Pusher"
 msgstr "Over Password Pusher"
 
 #: ../../../app/views/pages/about.html.erb:2
-#: ../../../app/views/shared/_footer.html.erb:49
+#: ../../../app/views/shared/_footer.html.erb:48
 msgid "About"
 msgstr "Over"
 
@@ -1477,7 +1493,7 @@ msgid "Thank you for supporting Password Pusher!"
 msgstr "Bedankt voor het steunen van Password Pusher!"
 
 #: ../../../app/views/pages/about.html.erb:87
-#: ../../../app/views/shared/_footer.html.erb:26
+#: ../../../app/views/shared/_footer.html.erb:25
 msgid "Resources"
 msgstr "Middelen"
 
@@ -1538,7 +1554,7 @@ msgid "Follow for news, changes & updates."
 msgstr "Volg voor nieuws, wijzigingen en updates."
 
 #: ../../../app/views/pages/faq.html.erb:1
-#: ../../../app/views/shared/_footer.html.erb:35
+#: ../../../app/views/shared/_footer.html.erb:34
 msgid "FAQ"
 msgstr "FAQ"
 
@@ -1767,7 +1783,7 @@ msgid "The"
 msgstr "De"
 
 #: ../../../app/views/pages/faq.html.erb:110
-#: ../../../app/views/shared/_footer.html.erb:44
+#: ../../../app/views/shared/_footer.html.erb:43
 msgid "Tools"
 msgstr "Gereedschap"
 
@@ -1904,13 +1920,13 @@ msgstr ""
 
 #: ../../../app/views/pages/faq.html.erb:203
 msgid ""
-"In this respect, the public instance at pwpush.com is may be superior that it "
+"In this respect, the public instance at pwpush.com may be superior in that it "
 "contains only passwords without identifying information mixed among users from"
 " around the globe."
 msgstr ""
-"In dit opzicht is de openbare instantie op pwpush.com misschien superieur omda"
-"t deze alleen wachtwoorden bevat zonder identificerende informatie die is verm"
-"engd met gebruikers van over de hele wereld."
+"In dit opzicht kan de openbare instantie op pwpush.com superieur zijn omdat de"
+"ze alleen wachtwoorden bevat zonder identificerende informatie die gemengd is "
+"onder gebruikers van over de hele wereld."
 
 #: ../../../app/views/pages/faq.html.erb:204
 msgid ""
@@ -2503,35 +2519,35 @@ msgstr "URLs"
 msgid "New"
 msgstr "Nieuw"
 
-#: ../../../app/views/shared/_footer.html.erb:5
+#: ../../../app/views/shared/_footer.html.erb:4
 msgid "Peter"
 msgstr "Peter"
 
-#: ../../../app/views/shared/_footer.html.erb:23
+#: ../../../app/views/shared/_footer.html.erb:22
 msgid "Front Page"
 msgstr "Voorpagina"
 
-#: ../../../app/views/shared/_footer.html.erb:31
+#: ../../../app/views/shared/_footer.html.erb:30
 msgid "Docker Containers"
 msgstr "Docker Containers"
 
-#: ../../../app/views/shared/_footer.html.erb:36
+#: ../../../app/views/shared/_footer.html.erb:35
 msgid "JSON API"
 msgstr "JSON-API"
 
-#: ../../../app/views/shared/_footer.html.erb:37
+#: ../../../app/views/shared/_footer.html.erb:36
 msgid "Key Generator"
 msgstr "Key Generator"
 
-#: ../../../app/views/shared/_footer.html.erb:40
+#: ../../../app/views/shared/_footer.html.erb:39
 msgid "Source Code"
 msgstr "Broncode"
 
-#: ../../../app/views/shared/_footer.html.erb:52
+#: ../../../app/views/shared/_footer.html.erb:51
 msgid "Overview"
 msgstr "Overzicht"
 
-#: ../../../app/views/shared/_footer.html.erb:53
+#: ../../../app/views/shared/_footer.html.erb:52
 msgid "Help Translate!"
 msgstr "Help met vertalen!"
 

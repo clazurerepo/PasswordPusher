@@ -240,6 +240,8 @@ pl:
       multi_page: Wyświetlam %{model} %{from} - %{to} z %{count} wszystkich
       multi_page_html: Wyświetlam %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> z <b>%{count}</b>
         wszystkich
+    previous_aria_label: Poprzednia strona
+    next_aria_label: Następna strona
   flash:
     actions:
       create:
@@ -579,3 +581,24 @@ pl:
           lub translation.yandex_api_key w config/i18n-tasks.yml. Zdobądź klucz na
           https://tech.yandex.com/translate.
         no_results: Yandex nie zwrócił żadnych wyników.
+  routes:
+    users: użytkownicy
+    passwords: Hasła
+    files: akta
+    urls: adresy URL
+    sessions: sesje
+    registrations: rejestracje
+    unlocks: odblokowuje
+    feedbacks: informacje zwrotne
+    pages: strony
+    new: nowy
+    edit: edytować
+    update: aktualizacja
+    destroy: zniszczyć
+    create: tworzyć
+    expired: wygasły
+    active: aktywny
+    audit: rewizja
+    access: dostęp
+    passphrase: hasło
+    preview: zapowiedź
