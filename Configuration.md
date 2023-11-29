@@ -87,6 +87,7 @@ Notes:
 | PWP__DEFAULT_LOCALE | Sets the default language for the application.  See the [documentation](https://github.com/pglombardo/PasswordPusher#internationalization). | `en` |
 | PWP__RELATIVE_ROOT | Runs the application in a subfolder.  e.g. With a value of `pwp` the front page will then be at `https://url/pwp` | `Not set` |
 | PWP__SHOW_VERSION | Show the version in the footer | `true` |
+| PWP__SHOW_GDPR_CONSENT_BANNER | Optionally enable or disable the GDPR cookie consent banner. | `true` |
 
 ## Password Push Expiration Settings
 
@@ -552,6 +553,17 @@ An occasional issue is that when using Password Pusher behind a proxy, the gener
 To resolve this, make sure your proxy properly forwards the `X-Forwarded-Host`, `X-Forwarded-Port` and `X-Forwarded-Proto` headers.
 
 The values in these headers represent the front end request.  When these headers are sent, Password Pusher can then build the correct URLs.
+
+## Nginx Example
+
+As an example, for nginx, the addition could be:
+
+```nginx
+proxy_set_header  X-Forwarded-Port $server_port;
+proxy_set_header  X-Forwarded-Host $host;
+proxy_set_header  X-Forwarded-Proto $scheme;
+proxy_set_header  X-Forwarded-Ssl on;
+```
 
 If you are unable to have these headers passed to the application for any reason, you could instead force an override of the base URL using the `PWP__OVERRIDE_BASE_URL` environment variable.
 
