@@ -20,7 +20,7 @@ To run an ephemeral version of Password Pusher that saves no data after a contai
 
 _This example is set to listen on port 8000 for requests e.g. http://0.0.0.0:8000._
 
-See also this discussion if you want to persist data across container restarts: [pwpush-ephemeral: How to Add Persistence?](https://github.com/pglombardo/PasswordPusher/discussions/448)
+See also this discussion if you want to persist data across container restarts: [How to Add Persistence?](https://github.com/pglombardo/PasswordPusher/discussions/448)
 (Since this link refers to an outdated ephemeral image keep in mind to use current image `pglombardo/pwpush`)
 
 ## postgres
@@ -37,7 +37,7 @@ You can either configure your PostgreSQL server to use these credentials or over
 
 Providing a PostgreSQL password on the command line such as in the preceeding is less than ideal.  The Postgres Docker image also supports the idea of password files.
 
-See [this section on Docker Secrets](https://github.com/docker-library/docs/blob/master/postgres/README.md#docker-secrets) on how to avoid passing credentials on the command line.  Further, also [consider this example](https://github.com/pglombardo/PasswordPusher/issues/412) provided by [Viajaz](https://github.com/Viajaz).
+See [this section on Docker Secrets](https://github.com/docker-library/docs/blob/master/postgres/README.md#docker-secrets) on how to avoid passing credentials on the command line.  Further, also [consider this example](https://github.com/pglombardo/PasswordPusher/issues/412) provided by [Viajaz](https://github.com/Viajaz) or using a [Docker environment variable file](https://github.com/pglombardo/PasswordPusher/blob/master/containers/docker/pwpush-docker-env-file).
 
 
 ## mysql
@@ -50,7 +50,11 @@ You can either configure your MariaDB/MySQL server to use these credentials or o
 
     docker run -d -p "5100:5100" -e "DATABASE_URL=mysql2://pwpush_user:pwpush_passwd@mysql:3306/pwpush_db" pglombardo/pwpush:latest
 
-_Note: Providing a MariaDB/MySQL password on the command line is far less than ideal_
+### Better Security with Password Files
+
+Providing a password on the command line such as in the preceeding is less than ideal.
+
+See [this section on Docker Secrets](https://github.com/docker-library/docs/blob/master/postgres/README.md#docker-secrets) on how to avoid passing credentials on the command line or alternatively using a [Docker environment variable file](https://github.com/pglombardo/PasswordPusher/blob/master/containers/docker/pwpush-docker-env-file).
 
 
 ## Tags
@@ -69,7 +73,7 @@ The docker container is available for `linux/amd64` and `linux/arm64` platforms.
 # Docker Compose
 
 For a quick boot of a database backed application, see the available Docker Compose files:
-* [ephemeral](https://github.com/pglombardo/PasswordPusher/blob/master/containers/docker/pwpush/docker-compose-ephemeral.yml)
-* [postgres](https://github.com/pglombardo/PasswordPusher/blob/master/containers/docker/pwpush/docker-compose-postgres.yml)
-* [mysql](https://github.com/pglombardo/PasswordPusher/blob/master/containers/docker/pwpush/docker-compose-mysql.yml)
-* [mariadb](https://github.com/pglombardo/PasswordPusher/blob/master/containers/docker/pwpush/docker-compose-mariadb.yml)
+* [ephemeral](https://github.com/pglombardo/PasswordPusher/blob/master/containers/docker/docker-compose-ephemeral.yml)
+* [postgres](https://github.com/pglombardo/PasswordPusher/blob/master/containers/docker/docker-compose-postgres.yml)
+* [mysql](https://github.com/pglombardo/PasswordPusher/blob/master/containers/docker/docker-compose-mysql.yml)
+* [mariadb](https://github.com/pglombardo/PasswordPusher/blob/master/containers/docker/docker-compose-mariadb.yml)

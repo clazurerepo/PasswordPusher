@@ -88,13 +88,13 @@ fr:
       blank: doit être rempli(e)
       present: doit être vide
       too_long:
-        one: est trop long (pas plus d'un caractère)
+        one: est trop long (pas plus de %{count} caractères)
         other: est trop long (pas plus de %{count} caractères)
       too_short:
-        one: est trop court (au moins un caractère)
+        one: est trop court (au moins %{count} caractères)
         other: est trop court (au moins %{count} caractères)
       wrong_length:
-        one: ne fait pas la bonne longueur (doit comporter un seul caractère)
+        one: ne fait pas la bonne longueur (doit comporter %{count} caractères)
         other: ne fait pas la bonne longueur (doit comporter %{count} caractères)
       not_a_number: n'est pas un nombre
       not_an_integer: doit être un nombre entier
@@ -229,26 +229,19 @@ fr:
       create: Créer un(e) %{model}
       update: Modifier ce(tte) %{model}
       submit: Enregistrer ce(tte) %{model}
-  will_paginate:
-    previous_label: "← précédent"
-    next_label: suivant →
-    page_gap: "&hellip;"
-    container_aria_label: Mise en page
-    page_aria_label: Page %{page}
     page_entries_info:
-      single_page:
-        zero: Aucun %{model} trouvé
-        one: "%{count} %{model} affiché(e)"
-        other: "%{count} %{model} affiché(e)s"
-      single_page_html:
-        zero: Aucun %{model} trouvé
-        one: "%{count} %{model} affiché(e)"
-        other: "%{count} %{model} affiché(e)s"
-      multi_page: "%{model} %{from} - %{to} sur %{count} au total"
-      multi_page_html: "%{model} <strong>%{from} - %{to}</strong> sur <strong>%{count}</strong>
-        au total"
-    previous_aria_label: Page précédente
-    next_aria_label: Page suivante
+      entry:
+        zero: entrées
+        one: entrée
+        other: entrées
+      one_page:
+        display_entries:
+          zero: Aucun %{entry_name} trouvé
+          one: "<b>%{count}</b> %{entry_name}"
+          other: "<b>tous les %{count}</b> %{entry_name}"
+      more_pages:
+        display_entries: "%{entry_name}  <b>%{first} - %{last}</b> sur <b>%{total}</b>
+          au total"
   flash:
     actions:
       create:
@@ -283,7 +276,7 @@ fr:
       unconfirmed: Vous devez confirmer votre adresse email pour continuer.
     mailer:
       confirmation_instructions:
-        subject: Comment confirmer
+        subject: Instructions de confirmation
         action: Confirmer mon email
         greeting: Bienvenue %{recipient} !
         instruction: 'Vous pouvez confirmer votre email grâce au lien ci-dessous :'
@@ -609,9 +602,9 @@ fr:
   routes:
     users: utilisateurs
     passwords: mots de passe
-    files: des dossiers
+    files: fichiers
     urls: URL
-    sessions: séances
+    sessions: sessions
     registrations: inscriptions
     unlocks: déverrouille
     feedbacks: commentaires
@@ -625,5 +618,15 @@ fr:
     active: actif
     audit: Audit
     access: accéder
-    passphrase: phrase secrète
+    passphrase: passphrase
     preview: Aperçu
+  file_pushes:
+    new:
+      upload_limit: Vous pouvez télécharger jusqu'à %{count} fichiers par push.
+  views:
+    pagination:
+      first: "&laquo; Premier"
+      last: Dernier &raquo;
+      previous: "&lsaquo; Précédent"
+      next: Suivant &rsaquo;
+      truncate: "&hellip;"
