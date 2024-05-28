@@ -65,7 +65,7 @@ Password Pusher is also [on Twitter](https://twitter.com/pwpush), [Gettr](https:
 
 _or_
 
-→ Run your own instance with one command: `docker run -d -p "5100:5100" pglombardo/pwpush:release` then go to http://localhost:5100
+→ Run your own instance with one command: `docker run -d -p "5100:5100" pglombardo/pwpush:latest` then go to http://localhost:5100
 
 _or_
 
@@ -88,21 +88,21 @@ Docker images of Password Pusher are available on [Docker hub](https://hub.docke
 **➜ ephemeral**
 _Temporary database that is wiped on container restart._
 
-    docker run -d -p "5100:5100" pglombardo/pwpush:release
+    docker run -d -p "5100:5100" pglombardo/pwpush:latest
 
 [Learn more](https://github.com/pglombardo/PasswordPusher/tree/master/containers/docker#ephemeral)
 
 **➜ using an External Postgres Database**
 _Postgres database backed instance._
 
-    docker run -d -p "5100:5100" pglombardo/pwpush:release -e DATABASE_URL=postgres://pwpush_user:pwpush_passwd@postgres:5432/pwpush_db
+    docker run -d -p "5100:5100" pglombardo/pwpush:latest -e DATABASE_URL=postgres://pwpush_user:pwpush_passwd@postgres:5432/pwpush_db
 
 [Learn more](https://github.com/pglombardo/PasswordPusher/tree/master/containers/docker#postgres)
 
 **➜ using an External MariaDB (MySQL) Database**
 _Mariadb database backed instance._
 
-    docker run -d -p "5100:5100" pglombardo/pwpush:release -e DATABASE_URL=mysql2://pwpush_user:pwpush_passwd@mysql:3306/pwpush_db
+    docker run -d -p "5100:5100" pglombardo/pwpush:latest -e DATABASE_URL=mysql2://pwpush_user:pwpush_passwd@mysql:3306/pwpush_db
 
 [Learn more](https://github.com/pglombardo/PasswordPusher/tree/master/containers/docker#mysql)
 
@@ -112,30 +112,16 @@ _Note: Putting passwords in a command line is bad practice.  See the related Dat
 
 ### Docker Tags Reference
 
-**March 2024: The Docker tag strategy will change soon.**
-
-The following tables describe the current tag usage and upcoming change.
-
-**Current**
-
 | Tag    | Purpose          |
 |--------|------------------|
-| `latest` | The nightly development build  |
-| `release` | Stable build |
 | `vX.X.X` | Versioned tags |
-
-**Upcoming Change**
-
-| Tag    | Purpose          |
-|--------|------------------|
-| `latest` | The latest released vX.X.X  |
 | `stable` | The most stable tag for proven releases |
-| `vX.X.X` | Versioned tags |
+| `latest` | The latest (most recent) released vX.X.X  |
 | `nightly` | The nightly development build  |
 
-If in doubt, use `latest` or a `vX.X.X` tag.
+If in doubt, use `latest` or the `stable` tag.
 
-The `release` tag will be deprecated soon.
+_The previously used `release` tag is no longer used and won't be updated again.  Instead use the `stable` tag._
 
 
 ## With Docker Compose

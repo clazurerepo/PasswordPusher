@@ -2,10 +2,10 @@
 
 require "securerandom"
 
-class FilePushesController < ApplicationController
+class FilePushesController < BaseController
   helper FilePushesHelper
 
-  before_action :set_push, only: %i[show passphrase access preview preliminary audit destroy]
+  before_action :set_push, only: %i[show passphrase access preview print_preview preliminary audit destroy]
 
   # Authentication always except for :show
   acts_as_token_authentication_handler_for User, except: %i[show new preliminary destroy passphrase access]
@@ -143,23 +143,8 @@ class FilePushesController < ApplicationController
 
     @push = FilePush.new(file_push_params)
 
-    if ENV.key?("PWPUSH_COM")
-      @push_count = FilePush.where(user_id: current_user.id, expired: false).count
-      if @push_count >= 20
-        msg = _("Only 20 active file pushes allowed while in Beta. If it's an option, you can manually expire existing pushes before creating new ones.")
-        respond_to do |format|
-          format.html do
-            flash.now[:warning] = msg
-            render :new, status: :unprocessable_entity
-          end
-          format.json { render json: {error: msg}, status: :unprocessable_entity }
-        end
-        return
-      end
-    end
-
     if file_push_params.key?(:files) && file_push_params[:files].count > Settings.files.max_file_uploads
-      msg = t("file_pushes.new.upload_limit", count: Settings.files.max_file_uploads)
+      msg = t("pushes.form.upload_limit", count: Settings.files.max_file_uploads)
       respond_to do |format|
         format.html do
           flash.now[:warning] = msg
@@ -199,9 +184,24 @@ class FilePushesController < ApplicationController
   description ""
   def preview
     @secret_url = helpers.secret_url(@push)
+    @qr_code = helpers.qr_code(@secret_url)
 
     respond_to do |format|
       format.html { render action: "preview" }
+      format.json { render json: {url: @secret_url}, status: :ok }
+    end
+  end
+
+  def print_preview
+    @secret_url = helpers.secret_url(@push)
+    @qr_code = helpers.qr_code(@secret_url)
+
+    @message = print_preview_params[:message]
+    @show_expiration = print_preview_params[:show_expiration]
+    @show_id = print_preview_params[:show_id]
+
+    respond_to do |format|
+      format.html { render action: "print_preview", layout: "naked" }
       format.json { render json: {url: @secret_url}, status: :ok }
     end
   end
@@ -455,5 +455,9 @@ class FilePushesController < ApplicationController
   def file_push_params
     params.require(:file_push).permit(:payload, :expire_after_days, :expire_after_views,
       :retrieval_step, :deletable_by_viewer, :note, :passphrase, files: [])
+  end
+
+  def print_preview_params
+    params.permit(:id, :locale, :message, :show_expiration, :show_id)
   end
 end

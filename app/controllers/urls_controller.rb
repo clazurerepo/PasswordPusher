@@ -2,13 +2,13 @@
 
 require "securerandom"
 
-class UrlsController < ApplicationController
+class UrlsController < BaseController
   helper UrlsHelper
 
   # Authentication always except for the following:
   acts_as_token_authentication_handler_for User, except: %i[show new preliminary passphrase access]
 
-  before_action :set_push, only: %i[show passphrase access preview preliminary audit destroy]
+  before_action :set_push, only: %i[show passphrase access preview print_preview preliminary audit destroy]
 
   resource_description do
     name "URL Pushes"
@@ -20,7 +20,8 @@ class UrlsController < ApplicationController
   formats ["json"]
   example 'curl -X GET -H "X-User-Email: <email>" -H "X-User-Token: MyAPIToken" https://pwpush.com/r/fk27vnslkd.json'
   description "Retrieves a push including it's payload and details.  If the push is still active, " \
-              "this will burn a view and the transaction will be logged in the push audit log."
+              "this will burn a view and the transaction will be logged in the push audit log.  If the push " \
+              "has a passphrase, provide it in a ?passphrase=xxx GET parameter."
   def show
     # This url may have expired since the last view.  Validate the url
     # expiration before doing anything.
@@ -36,16 +37,16 @@ class UrlsController < ApplicationController
     end
 
     # Passphrase handling
-    if !@push.passphrase.nil? && @push.passphrase.present?
+    if @push.passphrase.present?
       # Construct the passphrase cookie name
       name = "#{@push.url_token}-r"
 
       # The passphrase can be passed in the params or in the cookie (default)
       # JSON requests must pass the passphrase in the params
-      has_passphrase = params.fetch(:passphrase,
-        nil) == @push.passphrase || cookies[name] == @push.passphrase_ciphertext
+      has_correct_passphrase =
+        params.fetch(:passphrase, nil) == @push.passphrase || cookies[name] == @push.passphrase_ciphertext
 
-      unless has_passphrase
+      if !has_correct_passphrase
         # Passphrase hasn't been provided or is incorrect
         # Redirect to the passphrase page
         respond_to do |format|
@@ -72,6 +73,13 @@ class UrlsController < ApplicationController
 
   # GET /r/:url_token/passphrase
   def passphrase
+    if @push.expired
+      respond_to do |format|
+        format.html { render template: "urls/show_expired", layout: "naked" }
+      end
+      return
+    end
+
     respond_to do |format|
       format.html { render action: "passphrase", layout: "naked" }
     end
@@ -88,7 +96,7 @@ class UrlsController < ApplicationController
       # Set the passphrase cookie
       cookies[name] = {value: @push.passphrase_ciphertext, expires: 10.minutes.from_now}
       # Redirect to the payload
-      redirect_to preliminary_url_path(@push.url_token)
+      redirect_to url_path(@push.url_token)
     else
       # Passphrase is invalid
       # Redirect to the passphrase page
@@ -186,9 +194,24 @@ class UrlsController < ApplicationController
   description ""
   def preview
     @secret_url = helpers.secret_url(@push)
+    @qr_code = helpers.qr_code(@secret_url)
 
     respond_to do |format|
       format.html { render action: "preview" }
+      format.json { render json: {url: @secret_url}, status: :ok }
+    end
+  end
+
+  def print_preview
+    @secret_url = helpers.secret_url(@push)
+    @qr_code = helpers.qr_code(@secret_url)
+
+    @message = print_preview_params[:message]
+    @show_expiration = print_preview_params[:show_expiration]
+    @show_id = print_preview_params[:show_id]
+
+    respond_to do |format|
+      format.html { render action: "print_preview", layout: "naked" }
       format.json { render json: {url: @secret_url}, status: :ok }
     end
   end
@@ -414,5 +437,9 @@ class UrlsController < ApplicationController
 
   def url_params
     params.require(:url).permit(:payload, :expire_after_days, :expire_after_views, :retrieval_step, :note)
+  end
+
+  def print_preview_params
+    params.permit(:id, :locale, :message, :show_expiration, :show_id)
   end
 end

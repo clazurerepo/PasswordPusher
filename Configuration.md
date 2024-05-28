@@ -30,7 +30,7 @@ export PWP__DEFAULT_LOCALE='fr'
 
 ```sh
 # Change the default language for the application to French
-docker run -d --env PWP__DEFAULT_LOCALE=fr -p "5100:5100" pglombardo/pwpush:release
+docker run -d --env PWP__DEFAULT_LOCALE=fr -p "5100:5100" pglombardo/pwpush:latest
 ```
 
 _Tip: If you have to set a large number of environment variables for Docker, consider using a Docker env-file.  There is an [example docker-env-file](https://github.com/pglombardo/PasswordPusher/blob/master/containers/docker/pwpush-docker-env-file) with instructions available._
@@ -48,7 +48,7 @@ To replace this file with your own custom version, you can launch the Docker con
 ```sh
     docker run -d \
       --mount type=bind,source=/path/settings.yml,target=/opt/PasswordPusher/config/settings.yml \
-      -p "5100:5100" pglombardo/pwpush:release
+      -p "5100:5100" pglombardo/pwpush:latest
 ```
 
 # Application Encryption
@@ -134,7 +134,7 @@ _All_ of the following environments need to be set (except SMTP authentication i
 | Environment Variable | Description | Default |
 | --------- | ------------------ | --- |
 | PWP__ENABLE_LOGINS | On/Off switch for logins. | `false` |
-| PWP__ALLOW_ANONYMOUS | When false, requires a login for the front page (to push new passwords). | `true` |
+| PWP__ALLOW_ANONYMOUS | When false, requires a login for the front page (to push new passwords).  Secret URLs can still be accessed anonymously. | `true` |
 | PWP__MAIL__RAISE_DELIVERY_ERRORS | Email delivery errors will be shown in the application | `true` |
 | PWP__MAIL__SMTP_ADDRESS | Allows you to use a remote mail server. Just change it from its default "localhost" setting. | `smtp.domain.com` |
 | PWP__MAIL__SMTP_PORT | Port of the SMTP server | `587` |
@@ -216,7 +216,7 @@ The default location for local storage is `./storage`.
 
 If using containers and you prefer local storage, you can add a volume mount to the container at the path `/opt/PasswordPusher/storage`:
 
-`docker run -d -p "5100:5100" -v /var/lib/pwpush/files:/opt/PasswordPusher/storage pglombardo/pwpush:release`
+`docker run -d -p "5100:5100" -v /var/lib/pwpush/files:/opt/PasswordPusher/storage pglombardo/pwpush:latest`
 
 Please _make sure_ that the directory is writeable by the docker container.
 
@@ -378,7 +378,7 @@ The values for the `*_LOGO` images can either be:
 
 As an example for #2 above, say you place your logo images locally into `/var/lib/pwpush/logos/`.  You would then mount that directory into the container:
 
-`docker run -d -p "5100:5100" -v /var/lib/pwpush/logos:/opt/PasswordPusher/public/logos pglombardo/pwpush:release`
+`docker run -d -p "5100:5100" -v /var/lib/pwpush/logos:/opt/PasswordPusher/public/logos pglombardo/pwpush:latest`
 
 or alternatively for a `docker-compose.yml` file:
 
@@ -459,7 +459,7 @@ __Note:__ Since the theme is a boot level selection, the theme can only be selec
 So to set the `quartz` theme for a Docker container:
 
 ```bash
-docker run --env PWP__THEME=quartz --env PWP_PRECOMPILE=true -p "5100:5100" pglombardo/pwpush:release
+docker run --env PWP__THEME=quartz --env PWP_PRECOMPILE=true -p "5100:5100" pglombardo/pwpush:latest
 ```
 
 or alternatively for source code:
@@ -503,7 +503,7 @@ When changing this file inside a Docker container, make sure to set the precompi
 An example Docker command to override that file would be:
 
 ```
-docker run -e PWP_PRECOMPILE=true --mount type=bind,source=/path/to/my/custom.css,target=/opt/PasswordPusher/app/assets/stylesheets/custom.css -p 5100:5100 pglombardo/pwpush:release
+docker run -e PWP_PRECOMPILE=true --mount type=bind,source=/path/to/my/custom.css,target=/opt/PasswordPusher/app/assets/stylesheets/custom.css -p 5100:5100 pglombardo/pwpush:latest
 ```
 or the `docker-compose.yml` equivalent:
 
@@ -512,7 +512,7 @@ version: '2.1'
 services:
 
   pwpush:
-    image: docker.io/pglombardo/pwpush:release
+    image: docker.io/pglombardo/pwpush:latest
     ports:
       - "5100:5100"
     environment:
@@ -601,6 +601,8 @@ If you are unable to have these headers passed to the application for any reason
 Password Pusher bundles an Admin dashboard for self-hosted instances available at `/admin`. This dashboard allows for direct database access, so care should be taken.
 
 It is only enabled with logins are enabled (`enable_logins`) and access is limited to accounts marked as "Administrator" only.
+
+_Note: Make sure you are running [v1.40.3](https://github.com/pglombardo/PasswordPusher/releases) or newer to have access to the Admin Dashboard._
 
 ### Security & Access
 

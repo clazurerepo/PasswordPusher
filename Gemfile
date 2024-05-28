@@ -34,6 +34,8 @@ end
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  # gem install debase -v '0.2.5.beta2' -- --with-cflags=-Wno-error=incompatible-function-pointer-types
+  # https://blog.arkency.com/how-to-get-burned-by-16-years-old-hack-in-2024/
   gem "debase", ">= 0.2.5.beta2", platforms: %i[mri mingw x64_mingw]
   gem "debug", platforms: %i[mri mingw x64_mingw]
 
@@ -93,9 +95,10 @@ gem "puma"
 gem "rollbar"
 gem "simple_token_authentication"
 gem "kaminari", "~> 1.2"
+gem "invisible_captcha", "~> 2.3"
 
 gem "devise-i18n"
-gem "i18n-tasks", "~> 1.0.13" # , group: :development
+gem "i18n-tasks", "~> 1.0.14" # , group: :development
 gem "rails-i18n", "~> 7.0.9"
 gem "route_translator", ">= 13.0.0"
 gem "translation"
@@ -103,7 +106,7 @@ gem "translation"
 # For File Uploads
 gem "aws-sdk-s3", require: false
 gem "azure-storage-blob", "~> 2.0", require: false
-gem "google-cloud-storage", "~> 1.49", require: false
+gem "google-cloud-storage", "~> 1.51", require: false
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
@@ -121,3 +124,5 @@ end
 gem "version", git: "https://github.com/pglombardo/version.git", branch: "master"
 
 gem "administrate", "~> 0.20.1"
+
+gem "rqrcode", "~> 2.2"

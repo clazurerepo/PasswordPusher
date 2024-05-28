@@ -109,6 +109,8 @@ allow_anonymous: true
 # The domain (without protocol) where this instance is hosted
 # Used in generating fully qualified URLs.
 #
+# Make sure to set this for email links to work correctly.
+#
 # Environment variable override:
 # PWP__HOST_DOMAIN='pwpush.com'
 #
@@ -118,6 +120,8 @@ allow_anonymous: true
 #
 # The protocol to reach the domain above
 # Used in generating fully qualified URLs.
+#
+# Make sure to set this for email links to work correctly.
 #
 # Environment variable override:
 # PWP__HOST_PROTOCOL='https'
@@ -140,7 +144,7 @@ host_protocol: 'https'
 
 ### Show version on the footer
 #
-# Enable/disable PasswordPusher verison on the footer.
+# Enable/disable PasswordPusher version on the footer.
 #
 # Environment variable override:
 # PWP__SHOW_VERSION=true
@@ -718,6 +722,8 @@ throttling:
 # for ActionMailer is at:
 # https://guides.rubyonrails.org/action_mailer_basics.html#action-mailer-configuration
 #
+# IMPORTANT: Also set host_domain and host_protocol above for email links to work correctly!
+#
 mail:
   # Email delivery errors will be shown in the application
   # Environment Variable Override: PWP__MAIL__RAISE_DELIVERY_ERRORS='false'
@@ -726,14 +732,6 @@ mail:
   # Allows you to use a remote mail server. Just change it from its default "localhost" setting.
   # Environment Variable Override: PWP__MAIL__SMTP_ADDRESS='smtp.example.com'
   # smtp_address: smtp.example.com
-
-  # If your mail server requires authentication, set the username in this setting.
-  # Environment Variable Override: PWP__MAIL__SMTP_USER_NAME='apikey'
-  # smtp_user_name: 'apikey'
-
-  # If your mail server requires authentication, set the password in this setting.
-  # Environment Variable Override: PWP__MAIL__SMTP_PASSWORD='something@&#$'
-  # smtp_password: ''
 
   # If you need to specify a HELO domain, you can do it here.
   # Environment Variable Override: PWP__MAIL__SMTP_DOMAIN='xyz.dev'
@@ -749,8 +747,19 @@ mail:
   # or :cram_md5 (combines a Challenge/Response mechanism to exchange
   # information and a cryptographic Message Digest 5 algorithm to hash
   # important information)
+  #
+  # Important: Comment this out if your server doesn't require authentication.
+  #
   # Environment Variable Override: PWP__MAIL__SMTP_AUTHENTICATION='plain'
   smtp_authentication: 'plain'
+
+  # If your mail server requires authentication, set the username in this setting.
+  # Environment Variable Override: PWP__MAIL__SMTP_USER_NAME='apikey'
+  # smtp_user_name: 'apikey'
+
+  # If your mail server requires authentication, set the password in this setting.
+  # Environment Variable Override: PWP__MAIL__SMTP_PASSWORD='something@&#$'
+  # smtp_password: ''
 
   # Use STARTTLS when connecting to your SMTP server and fail if unsupported.
   # Environment Variable Override: PWP__MAIL__SMTP_STARTTLS='true'
@@ -777,7 +786,7 @@ mail:
   # Configure the e-mail address which will be shown as 'From' in emails
   # See config/initializers/devise.rb where this is used
   # Environment Variable Override: PWP__MAIL__MAILER_SENDER='"Password Pusher" <pglombardo@pwpush.com>'
-  # mailer_sender: '"Password Pusher" <pglombardo@pwpush.com>'
+  # mailer_sender: '"Password Pusher" <oss@pwpush.com>'
 
 ### Feedback Form
 feedback:

@@ -18,6 +18,8 @@ class UserDashboard < Administrate::BaseDashboard
     current_sign_in_ip: Field::String,
     email: Field::String,
     encrypted_password: Field::String,
+    password: Field::String.with_options(searchable: false),
+    password_confirmation: Field::String.with_options(searchable: false),
     failed_attempts: Field::Number,
     file_pushes: Field::HasMany,
     last_sign_in_at: Field::DateTime,
@@ -43,7 +45,9 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     email
+    created_at
     confirmed_at
+    sign_in_count
     admin
   ].freeze
 
@@ -89,7 +93,7 @@ class UserDashboard < Administrate::BaseDashboard
     current_sign_in_at
     current_sign_in_ip
     email
-    encrypted_password
+    password
     failed_attempts
     file_pushes
     last_sign_in_at
