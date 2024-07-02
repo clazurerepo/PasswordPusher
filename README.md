@@ -7,7 +7,7 @@ __Simple & Secure Password Sharing with Auto-Expiration of Shared Items__
 [![](https://badgen.net/twitter/follow/pwpush)](https://twitter.com/pwpush)
 ![](https://badgen.net/github/stars/pglombardo/PasswordPusher)
 [![](https://badgen.net/uptime-robot/month/m789048867-17b5770ccd78208645662f1f)](https://stats.uptimerobot.com/6xJjNtPr93)
-[![](https://badgen.net/docker/pulls/pglombardo/pwpush)](https://hub.docker.com/repositories)
+[![](https://badgen.net/docker/pulls/pglombardo/pwpush-ephemeral)](https://hub.docker.com/repositories)
 
 [![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/pglombardo/PasswordPusher/ruby-tests.yml)](https://github.com/pglombardo/PasswordPusher/actions/workflows/ruby-tests.yml)
 [![Dependencies Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](https://github.com/pglombardo/pwpush-cli/pulls?utf8=%E2%9C%93&q=is%3Apr%20author%3Aapp%2Fdependabot)
@@ -41,7 +41,7 @@ Hosted at [pwpush.com](https://pwpush.com) but you can also easily run your own 
 * __Light & dark themes:__  Via CSS @media integration, the default site theme follows your local preferences.
 * __Re-Brandable:__ Customize the site name, tagline and logo to fit your environment.
 * __Custom CSS:__ Bundle in your own custom CSS to add your own design.
-* __10 Years Old:__ Password Pusher has securely delivered millions and millions of passwords in its 10 year history.
+* __>10 Years Old:__ Password Pusher has securely delivered millions and millions of passwords in its 10 year history.
 * __Actively Maintained:__ I happily work for the good karma of the great IT/Security community.
 * __Honest Software:__  Open source written and maintained by [me](https://github.com/pglombardo) with the help of some great contributors.  No organizations, corporations or evil agendas.
 
@@ -65,7 +65,7 @@ Password Pusher is also [on Twitter](https://twitter.com/pwpush), [Gettr](https:
 
 _or_
 
-→ Run your own instance with one command: `docker run -d -p "5100:5100" pglombardo/pwpush:latest` then go to http://localhost:5100
+→ Run your own instance with `docker run -d -p "5100:5100" pglombardo/pwpush:latest` or a [production ready setup with a database & SSL/TLS](https://github.com/pglombardo/PasswordPusher/tree/master/containers/docker/all-in-one).
 
 _or_
 
@@ -79,7 +79,7 @@ _or_
 
  🎉 🎉 🎉
 
-_Note: Password Pusher can be largely configured by environment variables so after you pick your deployment method below, make sure to read [the configuration page](Configuration.md).  Take particular attention in setting your own custom encryption key which isn't required but provides the best security for your instance._
+_Note: Password Pusher can be largely configured by a config file or environment variables so after you pick your deployment method below, make sure to read [the configuration page](Configuration.md).  Take particular attention in setting your own custom encryption key which isn't required but provides the best security for your instance._
 
 ## On Docker
 
